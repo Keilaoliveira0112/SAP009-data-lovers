@@ -1,0 +1,26 @@
+/*carrossel*/
+
+.logo{
+  width: 10vw;
+  margin: 10px;
+}
+
+.form-busca{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+#search{
+  background-color: #EEEEEE;
+  border: solid 2px;
+  border-radius: 15px;
+  width: 430px;
+  height: 50px;
+  font-size: 25px;
+}
+
+#btn-img{
+  margin-left: 10px;
+}
+
