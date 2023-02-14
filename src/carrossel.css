@@ -1,0 +1,135 @@
+* {
+    background-color: #FCAF17;
+
+}
+
+
+/*.container {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    border-radius: 25px;
+
+}*/
+
+main {
+    padding: 30px;
+}
+
+.form-busca {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+.selectTypes {
+
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
+    padding: 0 5px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.flip {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    position: relative;
+}
+
+.container-card:hover .flipper-card {
+    transform: rotateY(180deg);
+}
+
+.face {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#front {
+    padding: 10px;
+    position: absolute;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+
+    backface-visibility: hidden;
+    background-color: #2885AE;
+    color: rgb(250, 250, 252);
+    transform: rotateY(180deg);
+}
+
+.cards-face p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    background-color: blanchedalmond;
+    text-align: center;
+}
+
+.h6 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.imgCard {
+    max-width: 10vw;
+    object-fit: contain;
+    filter: drop-shadow(5px 3px rgb(106, 105, 105));
+    width: 26vh;
+    height: 20vh;
+    border: 1px solid #FCAF17;
+    border-radius: 8px;
+    align-items: center;
+    background-color: blanchedalmond;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+#back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+
+    backface-visibility: hidden;
+    background-color: rgb(124, 131, 131);
+    color: black;
+    transform: rotateY(180deg);
+}
+
+
+.container-card:hover .flipper-card {
+    transform: rotateY(180deg);
+}

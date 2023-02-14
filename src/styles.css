@@ -20,8 +20,8 @@
     background-attachment: fixed;
 }
 
-.types{
-  background-color: #EEEEEE;
+.types {
+    background-color: #EEEEEE;
 }
 
 .position-header {
@@ -38,7 +38,7 @@
     background-color: #ffb004;
     width: 40vw;
     height: 11vh;
-    border-radius: 10px 0 0 10px;    
+    border-radius: 10px 0 0 10px;
 }
 
 .options-menu {
