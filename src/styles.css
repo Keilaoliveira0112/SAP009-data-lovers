@@ -1,14 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-}
-
-.types{
-  background-color: #EEEEEE;
 }
 
 .position-logo{
@@ -31,7 +27,7 @@
     background-color: #ffb004;
     width: 40vw;
     height: 11vh;
-    border-radius: 10px 0 0 10px;    
+    border-radius: 10px 0 0 10px;
 }
 
 .options-menu {
@@ -40,8 +36,4 @@
     color: #000000;
     cursor: pointer;
     padding: 5px;
-}
-
-main {
-    padding: 15px;
 }
