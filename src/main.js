@@ -11,6 +11,7 @@ const arrayPokemon = data.pokemon;
 window.addEventListener("load", () => printCards(arrayPokemon))
 
 //CHAMANDO A FUNÇÃO PARA QUANDO CARREGAR TODA A PÁGINA
+//
 
 function printCards(array) {
     document.querySelector(".cards").innerHTML = array.map((key) =>
@@ -18,14 +19,13 @@ function printCards(array) {
         `
         <a href="carrossel.html?carrossel=${key.num}">
             <div class="cardPokemon">
-                <p class="registro" >${key.num}</p>
+                <p class="numberPokemon" >${key.num}</p>
                 <h1>${key.name}</h1>
                 <img class="imgCard" src="${key.img}" alt="${key.name}">
                 <p class="tipo" >${key.type.join(" ")}</p>
             </div>
         </a>
-    `
-    ).join("")
+    `).join("")
 
 }
 
