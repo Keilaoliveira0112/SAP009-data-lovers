@@ -1,9 +1,10 @@
 /*css pokeball*/
 
-.position-section-home{
+.position-section-home {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
 .title-home {
     font-family: 'black hans sans', sans-serif;
     font-size: 400%;
