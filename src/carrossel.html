@@ -10,58 +10,56 @@
     <link rel="stylesheet" href="carrossel.css">
 </head>
 
-<body class="types">
+<body class="background-carrossel">
+  <header class="position-logo">
+    <img src="image/pokeball.png" alt="Pokebola" class="logo">
+    <nav class="position-header">
+      <div class="menu">      
+      <a href="index.html" class="options-menu">HOME</a>
+      <a class="options-menu" href="https://pokemongolive.com/" target="_blank" rel="noopener noreferrer">POKEMON GO</a> 
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <form class="form-busca">
+        <input type="search" name="search" id="search" value="" placeholder="Digite o nome do Pokémon">
+        <input type="image" id="btn-search" src="image/carrossel-search.png" alt="Lupa" width="45" height="45" >
+      </form>
+    </section>
+    <section class="section-filter">
+        <select class="filter-select">
+          <option class="type">Todos os tipos</option>
+          <option class="type">Bug</option>
+          <option class="type">Dark</option>
+          <option class="type">Dragon</option>
+          <option class="type">Electric</option>
+          <option class="type">Fighting</option>
+          <option class="type">Fire</option>
+          <option class="type">Flying</option>
+          <option class="type">Ghost</option>
+          <option class="type">Grass</option>
+          <option class="type">Ground</option>
+          <option class="type">Ice</option>
+          <option class="type">Normal</option>
+          <option class="type">Poison</option>
+          <option class="type">Psychic</option>
+          <option class="type">Rock</option>
+          <option class="type">Water</option>
+        </select>
+        <select class="filter-select">
+          <option class="type">Crescente</option>
+          <option class="type">Decrescente</option>
+          <option class="type">A - Z</option>
+          <option class="type">Z - A</option>
+        </select>
 
-    <header class="position-logo">
-        <nav class="position-header">
-            <div class="menu">
-                <a href="index.html" class="options-menu">HOME</a>
-                <a class="options-menu" href="https://pokemongolive.com/" target="_blank"
-                    rel="noopener noreferrer">POKEMON GO</a>
-            </div>
-        </nav>
-
-    </header>
-    <main>
-        <section>
-            <form class="form-busca">
-                <input type="search" name="search" id="search" value="" placeholder="Digite o nome do Pokémon">
-                <input type="image" id="btn-img" src="image/carrossel-search.png" alt="Lupa" width="45" height="45">
-            </form>
-        </section>
-        <section>
-            <select class="selectTypes">
-                <option id="todos">Todos</option>
-                <option>Bug</option>
-                <option>Dragon</option>
-                <option>Electric</option>
-                <option>Fighting</option>
-                <option>Fire</option>
-                <option>Flying</option>
-                <option>Ghost</option>
-                <option>Grass</option>
-                <option>Ground</option>
-                <option>Ice</option>
-                <option>Normal</option>
-                <option>Poison</option>
-                <option>Psychic</option>
-                <option>Rock</option>
-                <option>Water</option>
-            </select>
-        </section>
-        <section class="cards" id="flip">
-            <div class="face" id="front">
-                <p id="numberPokemon"></p>
-                <h6 id="namePokemon"></h6>
-                <img id="imgPokemon" />
-                <p id="type"></p>
-                <p id="rarity"></p>
-            </div>
-            <div class="face" id="back">informações do pokemon </div>
-
-        </section>
-
-    </main>
+    </section>
+    <section class="count">
+      <p>Foram...</p> <!-- Será uma função js e retornar a conta nessa tag -->
+    </section>
+    <section class="cards flip"></section>
+  </main>
 
     <footer></footer>
 
