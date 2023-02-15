@@ -23,6 +23,12 @@ printCards(resultPokemon)
 
 //console.log(example, data);
 
+const btnMenu = document.querySelector(".menu-toggle")
+const menu = document.querySelector(".position-header")
+
+btnMenu.addEventListener("click", function (){
+  menu.classList.toggle("show")
+})
 
 
 

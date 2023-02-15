@@ -25,15 +25,50 @@
     gap: 30px;
     padding: 20px;
     background-color: #ffb004;
-    width: 40vw;
-    height: 11vh;
+    width: 42vw;
+    max-width: 980px;
+    height: auto;
     border-radius: 10px 0 0 10px;
 }
 
 .options-menu {
-    font-size: 32px;
+    font-size: 1rem;
     font-weight: 800;
     color: #000000;
     cursor: pointer;
     padding: 5px;
 }
+
+@media (max-width: 2800px) {
+  .options-menu {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .position-header{
+    display: none;
+  }
+
+  .position-header.show{
+    display: block;
+  } 
+   
+  .one,
+  .two,
+  .three{
+    background-color: #fff;
+    height: 5px;
+    width: 100%;
+    margin: 6px auto;
+  }
+
+  .menu-toggle{
+    width: 40px;
+    height: 30px;
+    margin-right: 20px;
+  }
+}
+
+
+
