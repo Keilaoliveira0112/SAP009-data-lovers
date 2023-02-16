@@ -23,10 +23,11 @@ printCards(resultPokemon)
 
 //console.log(example, data);
 
+/* Menu Responsivo */
 const btnMenu = document.querySelector(".menu-toggle")
-const menu = document.querySelector(".position-header")
+const menu = document.querySelector(".menu-section")
 
-btnMenu.addEventListener("click", function (){
+btnMenu.addEventListener("click", () => {
   menu.classList.toggle("show")
 })
 

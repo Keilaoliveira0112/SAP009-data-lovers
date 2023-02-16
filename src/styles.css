@@ -7,13 +7,23 @@
     text-decoration: none;
 }
 
+html {
+  /* a cada 1rem será considera 10px */
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
 .position-logo{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
 }
 
-.position-header {
+.position-nav {
     display: flex;
     justify-content: flex-end;
     padding-top: 4em;
@@ -21,53 +31,121 @@
 
 .menu {
     display: flex;
-    justify-content: space-evenly;
-    gap: 30px;
     padding: 20px;
     background-color: #ffb004;
-    width: 42vw;
+    width: 30vw;
     max-width: 980px;
     height: auto;
     border-radius: 10px 0 0 10px;
 }
 
+.ul-nav{
+  display: flex;
+  gap: 30px;
+}
+
+li{
+  list-style-type: none;
+}
+
 .options-menu {
-    font-size: 1rem;
+    font-size: 3.5rem;
     font-weight: 800;
     color: #000000;
     cursor: pointer;
     padding: 5px;
 }
 
-@media (max-width: 2800px) {
+@media (max-width: 1450px){
   .options-menu {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
 
-@media (max-width: 768px) {
-  .position-header{
+@media (max-width: 1170px){
+  .position-logo .logo{
+    margin: auto;
+  }
+  .options-menu {
+    font-size: 2rem;
+  }
+
+  .position-nav{
     display: none;
   }
 
-  .position-header.show{
+  .position-nav.show{
     display: block;
   } 
    
   .one,
   .two,
   .three{
-    background-color: #fff;
-    height: 5px;
-    width: 100%;
+    background-color: #000;
+    height: 3px;
+    width: 70%;
     margin: 6px auto;
+
+    transition-duration: 0.3s;
   }
 
   .menu-toggle{
     width: 40px;
-    height: 30px;
+    height: 40px;
     margin-right: 20px;
+    border: none;
+    background-color: #D98F07;
+    box-shadow: 5px 10px 18px #888888;
   }
+
+  /* fullscreen */
+  .menu-section.show{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #D98F07;
+
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-section.show .position-nav{
+    display:block;
+  }
+
+  .menu-section.show .menu-toggle{
+    position: absolute;
+    right: 0;
+    top: 15px;
+    background-color: #D98F07;
+  }
+
+  .menu-section.show .menu-toggle .one{
+    transform: rotate(45deg) translate(7px,7px);
+  }
+/* ideia de transição */
+  .menu-section.show .menu-toggle .two{
+    opacity: 0;
+  }
+
+  .menu-section.show .menu-toggle .three{
+    transform: rotate(-45deg) translate(6px,-6px);
+  }
+
+  .menu-section.show .position-nav .options-menu{
+    text-align: center;
+    display: block;
+    transition-duration: 0.5s;
+    font-size: 2rem;
+    line-height: 4rem;
+  } 
 }
 
 
