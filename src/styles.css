@@ -16,137 +16,152 @@ body {
   font-size: 1.6rem;
 }
 
-.position-logo{
+/* Header: Extra small devices/Small devices/Medium devices */
+
+.position-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.logo {
+  width: 10vw;
+  max-width: 980px;
   margin: auto;
 }
 
 .position-nav {
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 4em;
+  display: none;
 }
 
-.menu {
-    display: flex;
-    padding: 20px;
-    background-color: #ffb004;
-    width: 30vw;
-    max-width: 980px;
-    height: auto;
-    border-radius: 10px 0 0 10px;
+.position-nav.show {
+  display: block;
 }
 
-.ul-nav{
+.one,
+.two,
+.three{
+  background-color: #000;
+  height: 3px;
+  width: 70%;
+  margin: 6px auto;
+  transition-duration: 0.3s;
+}
+
+.menu-toggle{
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  border: none;
+  background-color: #D98F07;
+  box-shadow: 5px 10px 18px #888888;
+}
+
+/* fullscreen */
+
+.menu-section.show{
+  position: absolute;
+  top: 0;
+  left: 0; 
+  width: 100vw;
+  height: 100vh;
+  background-color: #D98F07;
+  z-index: 10;
   display: flex;
-  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-section.show .position-nav{
+  display:block;
+}
+
+.menu-section.show .menu-toggle{
+  position: absolute;
+  right: 0;
+  top: 15px;
+  background-color: #eee;
+}
+
+.menu-section.show .menu-toggle .one{
+  transform: rotate(45deg) translate(7px,7px);
+}
+
+/* ideia de transição */
+.menu-section.show .menu-toggle .two{
+  opacity: 0;
+}
+
+.menu-section.show .menu-toggle .three{
+  transform: rotate(-45deg) translate(6px,-6px);
 }
 
 li{
   list-style-type: none;
 }
 
-.options-menu {
-    font-size: 3.5rem;
+.menu-section.show .position-nav .options-menu{
+  text-align: center;
+  display: block;
+  transition-duration: 0.5s;
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 10rem;
+  color: #000000;
+}
+
+/* Header: Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  
+  .logo {
+    margin: 10px;
+  }
+
+  .menu-toggle{
+    display: none;
+  }
+
+  .position-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 4em;
+  }
+
+  .menu {
+    display: flex;
+    padding: 20px;
+    background-color: #ffb004;
+    border: 2px solid #D98F07;
+    width: 30vw;
+    max-width: 980px;
+    height: auto;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 6px 5px 10px #949292;
+  }
+
+  .ul-nav{
+    display: flex;
+    gap: 60px;
+  }
+
+  .options-menu {
     font-weight: 800;
     color: #000000;
     cursor: pointer;
     padding: 5px;
+  }
+
 }
 
-@media (max-width: 1450px){
-  .options-menu {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 1170px){
-  .position-logo .logo{
-    margin: auto;
-  }
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
   .options-menu {
     font-size: 2rem;
-  }
-
-  .position-nav{
-    display: none;
-  }
-
-  .position-nav.show{
-    display: block;
-  } 
-   
-  .one,
-  .two,
-  .three{
-    background-color: #000;
-    height: 3px;
-    width: 70%;
-    margin: 6px auto;
-
-    transition-duration: 0.3s;
-  }
-
-  .menu-toggle{
-    width: 40px;
-    height: 40px;
-    margin-right: 20px;
-    border: none;
-    background-color: #D98F07;
-    box-shadow: 5px 10px 18px #888888;
-  }
-
-  /* fullscreen */
-  .menu-section.show{
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-    width: 100vw;
-    height: 100vh;
-
-    background-color: #D98F07;
-
-    z-index: 10;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .menu-section.show .position-nav{
-    display:block;
-  }
-
-  .menu-section.show .menu-toggle{
-    position: absolute;
-    right: 0;
-    top: 15px;
-    background-color: #D98F07;
-  }
-
-  .menu-section.show .menu-toggle .one{
-    transform: rotate(45deg) translate(7px,7px);
-  }
-/* ideia de transição */
-  .menu-section.show .menu-toggle .two{
-    opacity: 0;
-  }
-
-  .menu-section.show .menu-toggle .three{
-    transform: rotate(-45deg) translate(6px,-6px);
-  }
-
-  .menu-section.show .position-nav .options-menu{
-    text-align: center;
-    display: block;
-    transition-duration: 0.5s;
-    font-size: 2rem;
-    line-height: 4rem;
-  } 
+  }  
 }
 
-
-
+@media only screen and (min-width: 1700px) {
+  .options-menu {
+    font-size: 3rem;
+  } 
+}

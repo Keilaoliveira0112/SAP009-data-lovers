@@ -1,42 +1,133 @@
 /*css pokeball*/
 
-.initial-home {
-    font-family: 'Inter', sans-serif;
-    height: 100vh;
-    width: 100%;
-    background-color: #d68d04;
-    background-image: url("image/home-background.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    background-size: cover;
-    background-attachment: fixed;
+/* Extra small devices (phones, 600px and down) */
+
+.initial-home{
+  font-family: 'Inter', sans-serif;
+  height: auto;
+  width: 100%;
+  background-color: #d68d04;
+  background-image: url("image/home-mobile-background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.position-section-home {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.position-section-home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  margin-top: 20%;
 }
 
 .title-home {
-    font-family: 'black hans sans', sans-serif;
-    font-size: 400%;
-    font-weight: 900;
-    margin-left: 100px;
-    margin-top: 100px;
+  font-family: 'black hans sans', sans-serif;
+  font-size: 6rem;
+  font-weight: 700;
 }
 
 .seta {
-    margin-left: 180px;
-    width: 150px;
-    display: block;
-
+  display: none;
 }
 
 .pokebola {
-    margin-left: auto;
-    margin-right: auto;
-    width: 500px;
+  width: 75vw;
+  cursor: pointer;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+
+  .position-section-home{
+    gap: 10px;
+    margin-top: 12%;
+  }
+
+  .title-home {
+    font-size: 7rem;
+  }
+
+  .pokebola {
+    width: 55vw;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+  .position-section-home{
+    gap: 0px;
+    margin-top: 6%;
+  }
+
+  .title-home {
+    font-size: 8rem;
+  }
+
+  .pokebola {
+    width: 50vw;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+
+  .initial-home {
+    background-image: url("image/home-background.svg");
+  }
+
+  .position-section-home {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 20%;
+  }
+
+  .position-home{
+    margin-left: 4%;
+  }
+
+  .title-home {
+    font-size: 6rem;
+    font-weight: 800;
+  }
+
+  .seta {
+    margin-left: 65%;
+    width: 10vw;
+    max-width: 980px;
     display: block;
-    cursor: pointer;
+
+  }
+
+  .pokebola {
+    width: 40vw;
+  }  
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+  .position-section-home {
+    margin-top: 10%;
+  }
+
+  .title-home {
+    font-size: 8rem;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .position-section-home {
+    gap: 80px;
+    margin-top: 3%;
+  }
 }
