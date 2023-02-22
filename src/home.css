@@ -26,15 +26,19 @@
 
 .title-home {
   font-family: 'black hans sans', sans-serif;
-  font-size: 6rem;
+  font-size: calc(3vw + 3vh + 1vmin);
   font-weight: 700;
 }
 
-.seta {
+.arrow {
   display: none;
 }
 
-.pokebola {
+.position-pokeball{
+  flex:2;
+}
+
+.pokeball {
   width: 75vw;
   cursor: pointer;
 }
@@ -48,11 +52,11 @@
     margin-top: 12%;
   }
 
-  .title-home {
+/*   .title-home {
     font-size: 7rem;
-  }
+  } */
 
-  .pokebola {
+  .pokeball {
     width: 55vw;
   }
 }
@@ -65,11 +69,11 @@
     margin-top: 6%;
   }
 
-  .title-home {
+/*   .title-home {
     font-size: 8rem;
-  }
+  } */
 
-  .pokebola {
+  .pokeball {
     width: 50vw;
   }
 }
@@ -94,12 +98,12 @@
     margin-left: 4%;
   }
 
-  .title-home {
+  /* .title-home {
     font-size: 6rem;
     font-weight: 800;
-  }
+  } */
 
-  .seta {
+  .arrow {
     margin-left: 65%;
     width: 10vw;
     max-width: 980px;
@@ -107,7 +111,7 @@
 
   }
 
-  .pokebola {
+  .pokeball {
     width: 40vw;
   }  
 
@@ -120,14 +124,8 @@
     margin-top: 10%;
   }
 
-  .title-home {
+ /*  .title-home {
     font-size: 8rem;
-  }
-}
+  } */
 
-@media only screen and (min-width: 1700px) {
-  .position-section-home {
-    gap: 80px;
-    margin-top: 3%;
-  }
 }

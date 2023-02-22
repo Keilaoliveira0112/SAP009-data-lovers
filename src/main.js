@@ -9,11 +9,16 @@ const resultPokemon = data.pokemon;
 
 function printCards(array) {
   document.querySelector(".cards").innerHTML = array.map((key) =>
-   `<div class="cardPokemon front">
-      <p class="cards-face">Nº ${key.num}</p>
-      <p class="cards-face h6">${key.name}</p>
-      <img class="imgCard" src="${key.img}" alt="${key.name}">
-      <p class="cards-face"><strong>Tipo:</strong> ${key.type.join(" ")}</p>
+    `<div class="card-pokemon front">
+      <p class="card-number">Nº ${key.num}</p>
+      <p class="card-name">${key.name}</p>
+      <div class="card-info">
+        <p class="card-type"><strong>Tipo:</strong> ${key.type.join(" ")}</p>
+        <p class="card-about">${key.about}</p>
+      </div>
+      <div class= "card-image">
+        <img class="card-image-pokemon" src="${key.img}" alt="${key.name}">
+      </div>
     </div>`).join("")
 }
 
