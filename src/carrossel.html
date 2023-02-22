@@ -11,64 +11,65 @@
 </head>
 
 <body class="background-carrossel">
-  <header class="position-logo">
-    <img src="image/pokeball.png" alt="Pokebola" class="logo">
-    <div class="menu-section">
-      <button class="menu-toggle">
-        <div class="one"></div>
-        <div class="two"></div>
-        <div class="three"></div>
-      </button> 
-      <nav class="position-nav">
-        <div class="menu">
-          <ul class="ul-nav">
-            <li><a href="index.html" class="options-menu">HOME</a></li>
-            <li><a class="options-menu" href="https://pokemongolive.com/" target="_blank" rel="noopener noreferrer">POKEMON GO</a></li>
-          </ul>
-        </div> 
-      </nav>
-    </div> 
-  </header>
-  <main>
-    <section>
-      <form class="form-busca">
-        <input type="search" name="search" id="search" value="" placeholder="Digite o nome do Pokémon">
-        <input type="image" id="btn-search" src="image/carrossel-search.png" alt="Lupa" width="45" height="45" >
-      </form>
-    </section>
-    <section class="section-filter">
-        <select class="filter-select">
-          <option class="type">Todos os tipos</option>
-          <option class="type">Bug</option>
-          <option class="type">Dark</option>
-          <option class="type">Dragon</option>
-          <option class="type">Electric</option>
-          <option class="type">Fighting</option>
-          <option class="type">Fire</option>
-          <option class="type">Flying</option>
-          <option class="type">Ghost</option>
-          <option class="type">Grass</option>
-          <option class="type">Ground</option>
-          <option class="type">Ice</option>
-          <option class="type">Normal</option>
-          <option class="type">Poison</option>
-          <option class="type">Psychic</option>
-          <option class="type">Rock</option>
-          <option class="type">Water</option>
-        </select>
-        <select class="filter-select">
-          <option class="type">Crescente</option>
-          <option class="type">Decrescente</option>
-          <option class="type">A - Z</option>
-          <option class="type">Z - A</option>
-        </select>
+    <header class="position-logo">
+        <img src="image/pokeball.png" alt="Pokebola" class="logo">
+        <div class="menu-section">
+            <button class="menu-toggle">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </button>
+            <nav class="position-nav">
+                <div class="menu">
+                    <ul class="ul-nav">
+                        <li><a href="index.html" class="options-menu">HOME</a></li>
+                        <li><a class="options-menu" href="https://pokemongolive.com/" target="_blank"
+                                rel="noopener noreferrer">POKEMON GO</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <form class="form-busca">
+                <input type="search" name="search" id="search" value="" placeholder="Digite o nome do Pokémon">
+                <input type="image" id="btn-search" src="image/carrossel-search.png" alt="Lupa" width="45" height="45">
+            </form>
+        </section>
+        <section class="section-filter">
+            <select id="filter-types" class="filter-select">
+                <option class="type">Todos os tipos</option>
+                <option class="type">Bug</option>
+                <option class="type">Dark</option>
+                <option class="type">Dragon</option>
+                <option class="type">Electric</option>
+                <option class="type">Fighting</option>
+                <option class="type">Fire</option>
+                <option class="type">Flying</option>
+                <option class="type">Ghost</option>
+                <option class="type">Grass</option>
+                <option class="type">Ground</option>
+                <option class="type">Ice</option>
+                <option class="type">Normal</option>
+                <option class="type">Poison</option>
+                <option class="type">Psychic</option>
+                <option class="type">Rock</option>
+                <option class="type">Water</option>
+            </select>
+            <select class="filter-select">
+                <option class="type">Crescente</option>
+                <option class="type">Decrescente</option>
+                <option class="type">A - Z</option>
+                <option class="type">Z - A</option>
+            </select>
 
-    </section>
-    <section class="count">
-      <p>Foram...</p> <!-- Será uma função js e retornar a conta nessa tag -->
-    </section>
-    <section class="cards flip"></section>
-  </main>
+        </section>
+        <section class="count">
+            <p>Foram...</p> <!-- Será uma função js e retornar a conta nessa tag -->
+        </section>
+        <section class="cards"></section>
+    </main>
 
     <footer></footer>
 
