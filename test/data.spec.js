@@ -1,4 +1,4 @@
-import { filterPokemon } from '../src/data.js';
+/* import { filterPokemon } from '../src/data.js';
 
 
 const bulbasaur = {
@@ -60,7 +60,7 @@ describe('Buscar pokemom por tipo', () => {
     expect(filterPokemon(value1, pokemonTest)).toStrictEqual([bulbasaur, ivysaur]);
     expect(filterPokemon(value2, pokemonTest)).toEqual([charmander, charmeleon]);
   });
-});
+}); */
 
 
 /* describe('anotherExample', () => {

@@ -1,106 +1,104 @@
 /*css pokeball*/
 
-.initial-home {
-    font-family: 'Inter', sans-serif;
-    height: 100vh;
-    width: 100%;
-    background-color: #d68d04;
-    background-image: url("image/home-background.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    background-size: cover;
-    background-attachment: fixed;
+.initial-home{
+  font-family: 'Inter', sans-serif;
+  height: auto;
+  width: 100%;
+  background-color: #d68d04;
+  background-image: url("image/home-mobile-background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.position-section-home {
-    display: flex;
-    justify-content: flex-start;
-    gap: 5px;
-    margin-top: 12%;
-}
-
-.position-home {
-    margin-left: 4%;
+.position-section-home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+  margin-top: 20%;
 }
 
 .title-home {
-    font-family: 'black hans sans', sans-serif;
-    font-size: 14rem;
-    font-weight: 800;
+  font-family: 'black hans sans', sans-serif;
+  font-size: calc(3vw + 3vh + 1vmin);
+  font-weight: 700;
+}
+
+.arrow {
+  display: none;
+}
+
+.position-pokeball{
+  flex:2;
+}
+
+.pokeball {
+  width: 75vw;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
+
+  .position-section-home{
+    gap: 10px;
+    margin-top: 12%;
+  }
+
+  .pokeball {
+    width: 55vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+  .position-section-home{
+    gap: 130px;
+    margin-top: 12%;
+  }
+
+  .pokeball {
+    width: 50vw;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+
+  .initial-home {
+    background-image: url("image/home-background.svg");
+  }
+
+  .position-section-home {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 15px;
+    margin-top: 10%;
+  }
+
+  .position-home{
+    margin-left: 4%;
+  }
+
+  .arrow {
+    margin-left: 65%;
+    width: 10vw;
     max-width: 980px;
-
-}
-
-.seta {
-    margin-left: 51%;
-    width: 11vw;
     display: block;
+  }
+
+  .pokeball {
+    width: 40vw;
+  }  
+
 }
 
-.pokebola {
-  
-    width: 42vw;
-    cursor: pointer;
-}
+@media only screen and (min-width: 1200px) {
+  .position-section-home {
+    margin-top: 6%;
+  }
 
-@media (max-width: 2260px) {
-    .title-home{
-        font-size: 12rem;
-    }
-}
-
-@media (max-width: 2000px) {
-    .title-home {
-        font-size: 10rem;
-    }
-}
-
-@media (max-width: 1700px) {
-    .title-home {
-        font-size: 8rem;
-    }
-}
-
-
-@media (max-width: 1500px){
-   .position-section-home{
-        margin-top: 9%;
-   }
-   
-    .title-home{
-        font-size: 6rem;
-    }
-}
-
-@media (max-width: 1260px) {
-    .position-section-home {
-        margin-top: 25%;
-    }
-    
-    .title-home {
-        font-size: 6rem;
-    }
-}
-
-@media (max-width: 1070px) {
-    .position-section-home {
-        margin-top: 32%;
-    }
-    .position-home {
-        margin-top: -7%;
-    }
-}
-
-@media (max-width: 978px){
-    .position-section-home{
-       margin-top: 10%;
-    }
-}
-
-@media screen and (min-width: 320px){
-    .position-section-home{
-        max-width: 320px;
-        flex-direction: column;
-    }
 }
