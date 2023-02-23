@@ -21,7 +21,7 @@ function printCards(array) {
               <div class="flip-card-back">
                   <p class="cards-face">Peso: ${key.size.weight}</p>
                     <p class="cards-face h6">Altura: ${key.size.height}</p>
-                    <p class="cards-face>Raridade: ${key.pokemonRarity}">
+                    <li><strong>Raridade:<span class="cards-face"> ${key.pokemonRarity}</li>
                     <li><strong>Fraquezas:</strong> <span class="cars-face">${key.weaknesses.join("  ")} </li>
                     <p class="cards-face"><strong>Resistência:</strong> ${key.resistant.join("  ")}</p>
               </div>
