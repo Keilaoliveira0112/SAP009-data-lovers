@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 html {
@@ -16,137 +16,145 @@ body {
   font-size: 1.6rem;
 }
 
-.position-logo{
+.position-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1em;
+}
+
+.logo {
+  width: 10vw;
+  max-width: 980px;
   margin: auto;
 }
 
+.menu-toggle{
+  width: 10vw;
+  height: 6vh;
+  margin-right: 1em;
+  border: none;
+  background-color: #D98F07;
+  box-shadow: 5px 10px 18px #888888;
+}
+
+.one,
+.two,
+.three{
+  background-color: #000;
+  height: 2px;
+  width: 70%;
+  margin: 8px auto;
+  transition-duration: 0.3s;
+}
+
 .position-nav {
+  display: none;
+}
+
+.menu-section.show{
+  position: absolute;
+  top: 0;
+  left: 0; 
+  width: 100vw;
+  height: 100vh;
+  background-color: #D98F07;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-section.show .position-nav{
+  display:block;
+}
+
+.menu-section.show .menu-toggle{
+  position: absolute;
+  right: 0;
+  top: 15px;
+  box-shadow: none;
+}
+
+.menu-section.show .menu-toggle .one{
+  transform: rotate(45deg) translate(7px,7px);
+}
+
+.menu-section.show .menu-toggle .two{
+  opacity: 0;
+}
+
+.menu-section.show .menu-toggle .three{
+  transform: rotate(-45deg) translate(6px,-7px);
+}
+
+.li-nav{
+  list-style-type: none;
+}
+
+.menu-section.show .position-nav .options-menu{
+  text-align: center;
+  display: block;
+  transition-duration: 0.5s;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 7rem;
+  color: #000000;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-toggle{
+    width: 8vw;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .position-header{
+    padding: 0em;
+  }
+  
+  .logo {
+    margin: 10px;
+  }
+
+  .menu-toggle{
+    display: none;
+  }
+
+  .position-nav {
     display: flex;
     justify-content: flex-end;
     padding-top: 4em;
-}
+  }
 
-.menu {
+  .menu {
     display: flex;
     padding: 20px;
     background-color: #ffb004;
+    border: 2px solid #D98F07;
     width: 30vw;
     max-width: 980px;
     height: auto;
     border-radius: 10px 0 0 10px;
-}
+    box-shadow: 6px 5px 10px #949292;
+  }
 
-.ul-nav{
-  display: flex;
-  gap: 30px;
-}
+  .ul-nav{
+    display: flex;
+    gap: 60px;
+  }
 
-li{
-  list-style-type: none;
-}
-
-.options-menu {
-    font-size: 3.5rem;
+  .options-menu {
     font-weight: 800;
     color: #000000;
     cursor: pointer;
     padding: 5px;
+  }
+
 }
 
-@media (max-width: 1450px){
-  .options-menu {
-    font-size: 2.5rem;
-  }
-}
-
-@media (max-width: 1170px){
-  .position-logo .logo{
-    margin: auto;
-  }
+@media only screen and (min-width: 1200px) {
   .options-menu {
     font-size: 2rem;
-  }
-
-  .position-nav{
-    display: none;
-  }
-
-  .position-nav.show{
-    display: block;
-  } 
-   
-  .one,
-  .two,
-  .three{
-    background-color: #000;
-    height: 3px;
-    width: 70%;
-    margin: 6px auto;
-
-    transition-duration: 0.3s;
-  }
-
-  .menu-toggle{
-    width: 40px;
-    height: 40px;
-    margin-right: 20px;
-    border: none;
-    background-color: #D98F07;
-    box-shadow: 5px 10px 18px #888888;
-  }
-
-  /* fullscreen */
-  .menu-section.show{
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-    width: 100vw;
-    height: 100vh;
-
-    background-color: #D98F07;
-
-    z-index: 10;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .menu-section.show .position-nav{
-    display:block;
-  }
-
-  .menu-section.show .menu-toggle{
-    position: absolute;
-    right: 0;
-    top: 15px;
-    background-color: #D98F07;
-  }
-
-  .menu-section.show .menu-toggle .one{
-    transform: rotate(45deg) translate(7px,7px);
-  }
-/* ideia de transição */
-  .menu-section.show .menu-toggle .two{
-    opacity: 0;
-  }
-
-  .menu-section.show .menu-toggle .three{
-    transform: rotate(-45deg) translate(6px,-6px);
-  }
-
-  .menu-section.show .position-nav .options-menu{
-    text-align: center;
-    display: block;
-    transition-duration: 0.5s;
-    font-size: 2rem;
-    line-height: 4rem;
-  } 
+  }  
 }
-
-
-

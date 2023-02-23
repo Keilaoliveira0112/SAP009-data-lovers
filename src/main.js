@@ -10,23 +10,28 @@ const resultPokemon = data.pokemon;
 
 function printCards(array) {
   document.querySelector(".cards").innerHTML = array.map((key) =>
-    `  <div class="flip-card">
-          <div class="flip-card-inner">
-              <div class="flip-card-front">
-                   <p class="cards-face">Nº ${key.num}</p>
-                    <p class="cards-face h6">${key.name}</p>
-                    <img class="imgCard" src="${key.img}" alt="${key.name}">
-                    <p class="cards-face"><strong>Tipo:</strong> ${key.type.join(" ")}</p>
-              </div>
-              <div class="flip-card-back">
-                  <p class="cards-face">Peso: ${key.size.weight}</p>
-                    <p class="cards-face h6">Altura: ${key.size.height}</p>
-                    <p class="cards-face>Raridade: ${key.pokemonRarity}">
-                    <li><strong>Fraquezas:</strong> <span class="cars-face">${key.weaknesses.join("  ")} </li>
-                    <p class="cards-face"><strong>Resistência:</strong> ${key.resistant.join("  ")}</p>
-              </div>
+   `<div class="flip-card">
+      <div class="the-card">
+        <div class="card-pokemon card-front">
+          <p class="card-number">Nº ${key.num}</p>
+          <p class="card-name">${key.name}</p>
+          <div class="card-info">
+            <p class="card-type"><strong>Tipo:</strong> ${key.type.join(" ")}</p>
+            <p class="card-about"><strong>Geração:</strong> ${key.generation.name}</p>
+            <p class="card-about"><strong>Raridade:</strong> ${key.pokemonrarity}</p>
           </div>
-      </div> `).join("")
+          <div class= "card-image">
+            <img class="card-image-pokemon" src="${key.img}" alt="${key.name}">
+          </div>
+        </div>
+        <div class="card-pokemon card-back">
+          <p class="cards-face">Peso: ${key.size.weight}</p>
+          <p class="cards-face">Altura: ${key.size.height}</p>
+          <li><strong>Fraquezas:</strong> <span class="cars-face">${key.weaknesses.join("  ")}</li>
+          <p class="cards-face"><strong>Resistência:</strong> ${key.resistant.join("  ")}</p>
+        </div>
+      </div>  
+    </div> `).join("")
 }
 printCards(resultPokemon)
 
