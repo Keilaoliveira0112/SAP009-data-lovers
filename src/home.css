@@ -1,7 +1,5 @@
 /*css pokeball*/
 
-/* Extra small devices (phones, 600px and down) */
-
 .initial-home{
   font-family: 'Inter', sans-serif;
   height: auto;
@@ -43,8 +41,6 @@
   cursor: pointer;
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-
 @media only screen and (min-width: 600px) {
 
   .position-section-home{
@@ -52,33 +48,22 @@
     margin-top: 12%;
   }
 
-/*   .title-home {
-    font-size: 7rem;
-  } */
-
   .pokeball {
     width: 55vw;
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-
 @media only screen and (min-width: 768px) {
+
   .position-section-home{
     gap: 0px;
     margin-top: 6%;
   }
 
-/*   .title-home {
-    font-size: 8rem;
-  } */
-
   .pokeball {
     width: 50vw;
   }
 }
-
-/* Large devices (laptops/desktops, 992px and up) */
 
 @media only screen and (min-width: 992px) {
 
@@ -98,17 +83,11 @@
     margin-left: 4%;
   }
 
-  /* .title-home {
-    font-size: 6rem;
-    font-weight: 800;
-  } */
-
   .arrow {
     margin-left: 65%;
     width: 10vw;
     max-width: 980px;
     display: block;
-
   }
 
   .pokeball {
@@ -117,15 +96,9 @@
 
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-
 @media only screen and (min-width: 1200px) {
   .position-section-home {
     margin-top: 10%;
   }
-
- /*  .title-home {
-    font-size: 8rem;
-  } */
 
 }

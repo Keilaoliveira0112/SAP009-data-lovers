@@ -48,8 +48,8 @@
 }
 
 .count{
-    font-size: 2rem;
-    margin: 20px;
+  font-size: 2rem;
+  margin: 20px;
 }
 
 .cards{
@@ -62,7 +62,36 @@
   font-family: sans-serif;
 }
 
-.card-pokemon{
+.flip-card{
+  background-color: transparent;
+  height: 30vh;
+  perspective: 1000px;  
+}
+
+.the-card{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+}
+
+.flip-card:hover .the-card{
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+ .card-front {
   min-width: 300px;
   display: grid;
   grid-template-areas: 
@@ -73,12 +102,26 @@
   gap: 15px;
   padding: 15px;
   border-radius: 10px;
+ }
+
+ .card-back {
+  min-width: 300px;
+  display: grid;
+  grid-template-areas: 
+  "number name"
+  "info pokemon";
+  grid-template-columns: 1fr 1fr;
+  background-color: #b92929;
+  gap: 15px;
+  padding: 15px;
+  color: white;
+  transform: rotateY(180deg);
 }
 
 .card-number{
   grid-area: number;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   font-weight: 600;
   color: #FFFFFF;
 }
@@ -140,6 +183,10 @@
   .filter-select{
     font-size: 1.6rem;
   }
+
+  .flip-card{
+    height: 25vh;
+  }
 }
 
 /* Large devices (laptops/desktops, 1024px and up) */
@@ -150,11 +197,22 @@
     gap: 50px;
   }
 
-  .card-pokemon{
+  .flip-card{
+    height: 70vh;
+  }
+
+  .card-front{
     grid-template-areas: 
-      "number name"
-      "pokemon pokemon"
-      "info info";
+    "number name"
+    "pokemon pokemon"
+    "info info";
+  }
+
+  .card-back{
+    grid-template-areas: 
+    "number name"
+    "pokemon pokemon"
+    "info info";
   }
 
   .card-info{
@@ -183,3 +241,5 @@
     grid-template-columns: auto auto auto auto;
   }
 }
+
+ 

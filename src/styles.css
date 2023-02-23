@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 html {
@@ -15,8 +15,6 @@ html {
 body {
   font-size: 1.6rem;
 }
-
-/* Header: Extra small devices/Small devices/Medium devices */
 
 .position-header {
   display: flex;
@@ -54,8 +52,6 @@ body {
   display: none;
 }
 
-/* fullscreen */
-
 .menu-section.show{
   position: absolute;
   top: 0;
@@ -84,16 +80,15 @@ body {
   transform: rotate(45deg) translate(7px,7px);
 }
 
-/* ideia de transição */
 .menu-section.show .menu-toggle .two{
   opacity: 0;
 }
 
 .menu-section.show .menu-toggle .three{
-  transform: rotate(-45deg) translate(6px,-6px);
+  transform: rotate(-45deg) translate(6px,-7px);
 }
 
-li{
+.li-nav{
   list-style-type: none;
 }
 
@@ -113,7 +108,6 @@ li{
   }
 }
 
-/* Header: Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .position-header{
     padding: 0em;
@@ -159,7 +153,6 @@ li{
 
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .options-menu {
     font-size: 2rem;
