@@ -4,8 +4,22 @@
 
 /* export const example = () => {
   return 'example';
-};
+};*/
 
-export const anotherExample = () => {
-  return 'OMG';
-}; */
+
+function searchData(inputValue, array) {
+  const newSearch = array.filter(pokemon => pokemon.name.includes(inputValue));
+  return newSearch;
+}
+
+function filterPokemon(value, array) {
+  const newFilter = array.filter(pokemon => pokemon.type.includes(value.toLowerCase()));
+  return newFilter;
+}
+
+
+
+export {
+  searchData, 
+  filterPokemon
+}; 
