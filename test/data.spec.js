@@ -1,4 +1,4 @@
-import { filterPokemon } from '../src/data.js';
+import { filterPokemon, searchData } from '../src/data.js';
 
 
 const bulbasaur = {
@@ -58,6 +58,23 @@ describe('Buscar personagens por tipo', () => {
 
     expect(filterPokemon(value1, pokemonTest)).toStrictEqual([bulbasaur, ivysaur]);
     expect(filterPokemon(value2, pokemonTest)).toEqual([charmander, charmeleon]);
+  });
+});
+
+
+// Teste de função de pesquisa //
+
+describe('Buscar por nome do personagem', () => {
+  test('is a functon', () => {
+    expect(typeof searchData).toBe('function');
+  });
+
+  it('retornar os pokemons que possui as letras digitadas', () => {
+    const valueInput1 = "iv"
+    const valueInput2 = "ch"
+
+    expect(searchData(valueInput1, pokemonTest)).toEqual([ivysaur]);
+    expect(searchData(valueInput2, pokemonTest)).toEqual([charmander, charmeleon]);
   });
 });
 

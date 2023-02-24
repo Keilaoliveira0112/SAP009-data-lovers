@@ -1,5 +1,5 @@
 //import { types } from '@babel/core';
-import { searchData, filterPokemon } from './data.js';
+import { searchData, filterPokemon, calcularPorcetagem } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 //console.log(example, data);
@@ -7,6 +7,8 @@ import data from './data/pokemon/pokemon.js';
 //Mostrar todos os cards
 
 const resultPokemon = data.pokemon;
+
+const calculoText = document.getElementById('calcular')
 
 function printCards(array) {
   document.querySelector(".cards").innerHTML = array.map((key) =>`<div class="flip-card">
@@ -26,8 +28,8 @@ function printCards(array) {
         <div class="card-pokemon card-back">
           <p class="cards-face">Peso: ${key.size.weight}</p>
           <p class="cards-face">Altura: ${key.size.height}</p>
-          <li><strong>Fraquezas:</strong> <span class="cars-face">${key.weaknesses.join("  ")}</li>
-          <p class="cards-face"><strong>Resistência:</strong> ${key.resistant.join("  ")}</p>
+          <li><strong>Fraquezas:</strong> <span class="cars-face">${key.weaknesses.join(",  ")}</li>
+          <p class="cards-face"><strong>Resistência:</strong> ${key.resistant.join(",  ")}</p>
         </div>
       </div>  
     </div> `).join("")
@@ -42,6 +44,7 @@ const menu = document.querySelector(".menu-section")
 
 btnMenu.addEventListener("click", () => {
   menu.classList.toggle("show")
+  
 })
 
 /*Função pesquisa*/
@@ -51,6 +54,8 @@ searchInput.addEventListener('keyup', (evento) => {
   const valueInput = evento.target.value.toLowerCase()
   const listFilter = searchData(valueInput, data.pokemon)
   printCards(listFilter)
+
+  calculoText.innerHTML = `Nesta página você encontrará ... tipos de pokemons.`
 })
 
 /* Função filtro*/
@@ -61,4 +66,9 @@ filterTypes.addEventListener('change', () => {
   const filter = filterPokemon(filterTypes.value, data.pokemon)
  
   printCards(filter)
+  const porcent = calcularPorcetagem(filter, data.pokemon)
+  calculoText.innerHTML = ` Você encontrarar ${porcent}% de pokemons equivalentes` 
 })
+
+
+//Calculo agregado//
