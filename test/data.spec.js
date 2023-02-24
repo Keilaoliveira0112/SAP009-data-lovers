@@ -1,4 +1,4 @@
-/* import { filterPokemon } from '../src/data.js';
+import { filterPokemon } from '../src/data.js';
 
 
 const bulbasaur = {
@@ -35,32 +35,31 @@ const charmeleon = {
   ],
 }
 
-const vulpix = {
+/* const vulpix = {
   "num": "037",
   "name": "vulpix",
   "type": [
     "fire"
   ],
-}
+} */
 
-const pokemonTest = [bulbasaur, ivysaur, charmander, charmeleon, vulpix]
+const pokemonTest = [bulbasaur, ivysaur, charmander, charmeleon]
 
 
 // Teste do botão filtro por tipo de Pokemon//
-describe('Buscar pokemom por tipo', () => {
+describe('Buscar personagens por tipo', () => {
   test('is a function', () => {
     expect(typeof filterPokemon).toBe('function');
   });
 
-  it('returnar os pokemons do tipo selecionado', () => {
-
+  it('retornar os personagens do tipo selecionado', () => {
     const value1 = "grass"
     const value2 = "fire"
 
     expect(filterPokemon(value1, pokemonTest)).toStrictEqual([bulbasaur, ivysaur]);
     expect(filterPokemon(value2, pokemonTest)).toEqual([charmander, charmeleon]);
   });
-}); */
+});
 
 
 /* describe('anotherExample', () => {

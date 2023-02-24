@@ -17,7 +17,7 @@ function printCards(array) {
           <div class="card-info">
             <p class="card-type"><strong>Tipo:</strong> ${key.type.join(" ")}</p>
             <p class="card-about"><strong>Geração:</strong> ${key.generation.name}</p>
-            <p class="card-about"><strong>Raridade:</strong> ${key.pokemonrarity}</p>
+            <p class="card-about"><strong>Raridade:</strong> ${key["pokemon-rarity"]}</p>
           </div>
           <div class= "card-image">
             <img class="card-image-pokemon" src="${key.img}" alt="${key.name}">
