@@ -6,20 +6,33 @@
   return 'example';
 };*/
 
-
+/* Barra de Pesquisa */
 function searchData(inputValue, array) {
   const newSearch = array.filter(pokemon => pokemon.name.includes(inputValue));
   return newSearch;
 }
-
+/* Filtro do Tipo */
 function filterPokemon(value, array) {
   const newFilter = array.filter(pokemon => pokemon.type.includes(value.toLowerCase()));
   return newFilter;
 }
-
-
+/* Filtro da Ordem */
+function orderPokemon(value, array){
+  const copy = [...array];
+  if(value === "Crescente"){
+    copy.sort((a,b) => a.num - b.num);
+  }else if(value === "Decrescente"){
+    copy.sort((a,b) => b.num - a.num);
+  }else if(value === "a-z"){
+    copy.sort((a,b) => a.name > b.name ? 1 : -1);
+  }else if(value === "z-a"){
+    copy.sort((a,b) => a.name < b.name ? 1 : -1);
+  }
+  return copy;  
+}
 
 export {
   searchData, 
-  filterPokemon
-}; 
+  filterPokemon,
+  orderPokemon
+};
