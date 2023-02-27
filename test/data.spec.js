@@ -1,4 +1,4 @@
-import {orderPokemon} from '../src/data';
+import { filterPokemon, searchData, orderPokemon } from '../src/data.js';
 
 const bulbasaur = {
   "num": "001",
@@ -34,14 +34,45 @@ const charmeleon = {
   ],
 }
 
-
 const pokemonTest = [bulbasaur, ivysaur, charmander, charmeleon]
 
-/* Testes relacionados a ordenação de pokemons */
+// Teste do botão filtro por tipo de Pokemon//
+describe('Buscar personagens por tipo', () => {
+  test('is a function', () => {
+    expect(typeof filterPokemon).toBe('function');
+  });
+
+  it('retornar os personagens do tipo selecionado', () => {
+    const value1 = "grass"
+    const value2 = "fire"
+
+    expect(filterPokemon(value1, pokemonTest)).toStrictEqual([bulbasaur, ivysaur]);
+    expect(filterPokemon(value2, pokemonTest)).toEqual([charmander, charmeleon]);
+  });
+});
+
+// Teste de função de pesquisa //
+
+describe('Buscar por nome do personagem', () => {
+  test('is a functon', () => {
+    expect(typeof searchData).toBe('function');
+  });
+
+  it('retornar os pokemons que possui as letras digitadas', () => {
+    const valueInput1 = "iv"
+    const valueInput2 = "ch"
+
+    expect(searchData(valueInput1, pokemonTest)).toEqual([ivysaur]);
+    expect(searchData(valueInput2, pokemonTest)).toEqual([charmander, charmeleon]);
+  });
+});
+
+// Teste da função ordenar //
+
 describe('Ordenar Lista de Pokemons', () =>{
   test('is a function', () => {
     expect(typeof orderPokemon).toBe('function')
-  })
+  });
 
   it('Ordenar de a-z e z-a', () => {
     const valueAZ = "a-z"
@@ -52,15 +83,5 @@ describe('Ordenar Lista de Pokemons', () =>{
     
   });
   
-
 })
 
-/* describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-}); */

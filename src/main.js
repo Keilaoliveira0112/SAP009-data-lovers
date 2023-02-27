@@ -1,10 +1,12 @@
 //import { types } from '@babel/core';
-import { searchData, filterPokemon, orderPokemon, calculePokemon } from './data.js';
+import { searchData, filterPokemon, orderPokemon, calculatePercentage } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 /* Mostrar todos os cards */
 
 const resultPokemon = data.pokemon;
+
+const calculationText = document.getElementById('calculation')
 
 function printCards(array) {
   document.querySelector(".cards").innerHTML = array.map((key) => {
@@ -62,29 +64,33 @@ const menu = document.querySelector(".menu-section")
 
 btnMenu.addEventListener("click", () => {
   menu.classList.toggle("show")
+  
 })
 
-/*Função pesquisa*/
+/*Barra de pesquisa*/
 const searchInput = document.getElementById('search')
 
 searchInput.addEventListener('keyup', (evento) => {
   const valueInput = evento.target.value.toLowerCase()
   const listFilter = searchData(valueInput, data.pokemon)
   printCards(listFilter)
+
+  calculationText.innerHTML = `Nesta página você encontrará ... tipos de pokemons.`
 })
 
-/* Função filtro*/
+/* Filtro por tipo*/
 
 const filterTypes = document.getElementById('filter-types')
 
 filterTypes.addEventListener('change', () => {
   const filter = filterPokemon(filterTypes.value, data.pokemon)
-  const calculeType = calculePokemon(filter, resultPokemon)
-  document.querySelector("#calculation").innerHTML = `Foram encontrados ${filter.length} Pokemons. Percentual de ${calculeType}%.`
+ 
   printCards(filter)
+  const percentage = calculatePercentage(filter, data.pokemon)
+  calculationText.innerHTML = `Foram encontrados ${filter.length} Pokemons. Percentual de ${percentage}% do total.`  
 })
 
-/* Função Ordenar*/
+/* Filtro ordenar*/
 const selectOrder = document.getElementById('select-order')
 selectOrder.addEventListener('change', () => {
   const filterOrder = orderPokemon(selectOrder.value, data.pokemon)

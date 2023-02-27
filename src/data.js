@@ -8,7 +8,7 @@
 
 /* Barra de Pesquisa */
 function searchData(inputValue, array) {
-  const newSearch = array.filter(pokemon => pokemon.name.includes(inputValue));
+  const newSearch = array.filter(pokemon => pokemon.name.includes(inputValue)); // //***includes() O método includes() determina se um conjunto de caracteres pode ser encontrado dentro de outra string, retornando true ou false
   return newSearch;
 }
 /* Filtro do Tipo */
@@ -31,12 +31,14 @@ function orderPokemon(value, array){
   return copy;  
 }
 
-/* Função Cálculo Agregado */
-const calculePokemon = (arrayFilter, arrayTotal) => (arrayFilter.length/arrayTotal.length * 100).toFixed(2);
+/* Cálculo Agregado */
+function calculatePercentage(filterPokemon, array) {
+  return ((filterPokemon.length / array.length)*100).toFixed(2)
+}
 
 export {
   searchData, 
   filterPokemon,
   orderPokemon,
-  calculePokemon
-};
+  calculatePercentage
+}; 
