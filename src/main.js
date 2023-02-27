@@ -55,7 +55,7 @@ searchInput.addEventListener('keyup', (evento) => {
   const listFilter = searchData(valueInput, data.pokemon)
   printCards(listFilter)
 
-  calculoText.innerHTML = `Nesta página você encontrará ... tipos de pokemons.`
+  calculoText.innerHTML = `Nesta página você encontrará 251 tipos de pokemons.`
 })
 
 /* Função filtro*/
@@ -67,7 +67,7 @@ filterTypes.addEventListener('change', () => {
  
   printCards(filter)
   const porcent = calcularPorcetagem(filter, data.pokemon)
-  calculoText.innerHTML = ` Você encontrarar ${porcent}% de pokemons equivalentes` 
+  calculoText.innerHTML = ` Você encontrará ${porcent}% de pokemons equivalentes` 
 })
 
 

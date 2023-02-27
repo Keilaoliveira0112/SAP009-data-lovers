@@ -1,4 +1,4 @@
-import { filterPokemon, searchData } from '../src/data.js';
+import { filterPokemon, searchData, calcularPorcetagem } from '../src/data.js';
 
 
 const bulbasaur = {
@@ -35,13 +35,6 @@ const charmeleon = {
   ],
 }
 
-/* const vulpix = {
-  "num": "037",
-  "name": "vulpix",
-  "type": [
-    "fire"
-  ],
-} */
 
 const pokemonTest = [bulbasaur, ivysaur, charmander, charmeleon]
 
@@ -56,7 +49,7 @@ describe('Buscar personagens por tipo', () => {
     const value1 = "grass"
     const value2 = "fire"
 
-    expect(filterPokemon(value1, pokemonTest)).toStrictEqual([bulbasaur, ivysaur]);
+    expect(filterPokemon(value1, pokemonTest)).toEqual([bulbasaur, ivysaur]);
     expect(filterPokemon(value2, pokemonTest)).toEqual([charmander, charmeleon]);
   });
 });
@@ -77,6 +70,22 @@ describe('Buscar por nome do personagem', () => {
     expect(searchData(valueInput2, pokemonTest)).toEqual([charmander, charmeleon]);
   });
 });
+
+
+
+// teste da função calculo agregado//
+
+describe('Porcentagem dos itens filtrados', () => {
+  test('is a function', () => {
+    expect(typeof calcularPorcetagem).toBe('function');
+  });
+
+  it('retornar a porcentagem do array filtrado', () => {
+    const filterPokemon = [charmeleon]
+
+    expect(calcularPorcetagem(filterPokemon, pokemonTest)).toEqual("25.00");
+  });
+})
 
 
 /* describe('anotherExample', () => {
