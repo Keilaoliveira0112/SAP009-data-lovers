@@ -11,18 +11,18 @@ function printCards(array) {
     let evolutionTable = "";
     if(key.evolution && key.evolution["next-evolution"]){
       evolutionTable = `
-        <table border=1>
+        <table border=1 class="card-evolution">
           <tr>
-            <caption>Evolução</caption>
-            <th>name</th>
-            <th>candy-cost</th>
+            <caption class="title-evolution">Evolução</caption>
+            <th class="sub-info">name</th>
+            <th class="sub-info">candy-cost</th>
           </tr>
           
           ${key.evolution["next-evolution"].map((evolution) => 
             `
             <tr>
-              <td>${evolution.name}</td>
-              <td>${evolution["candy-cost"]}</td>
+              <td class="result-info">${evolution.name}</td>
+              <td class="result-info">${evolution["candy-cost"]}</td>
             </tr>
             `
           )}      
@@ -39,16 +39,16 @@ function printCards(array) {
             <p class="card-type"><strong>Tipo:</strong> ${key.type.join(" ")}</p>
             <p class="card-about"><strong>Geração:</strong> ${key.generation.name}</p>
             <p class="card-about"><strong>Raridade:</strong> ${key["pokemon-rarity"]}</p >
-            <p class="card-about">Peso: ${key.size.weight}</p>
-            <p class="card-about">Altura: ${key.size.height}</p>
+            <p class="card-about"><strong>Peso: </strong> ${key.size.weight}</p>
+            <p class="card-about"><strong>Altura: </strong> ${key.size.height}</p>
           </div >
   <div class="card-image">
     <img class="card-image-pokemon" src="${key.img}" alt="${key.name}">
   </div>
         </div >
   <div class="card-pokemon card-back">
-    <p class="card-about"><strong>Fraquezas:</strong>${key.weaknesses.join(", ")}</p>
-    <p class="card-about"><strong>Resistência:</strong> ${key.resistant.join(", ")}</p>
+    <p class="card-info-back"><strong>Fraquezas: </strong> ${key.weaknesses.join(", ")}</p>
+    <p class="card-info-back"><strong>Resistência: </strong> ${key.resistant.join(", ")}</p>
     ${evolutionTable}
   </div>
       </div >  

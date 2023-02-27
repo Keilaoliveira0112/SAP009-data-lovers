@@ -107,11 +107,10 @@
   min-width: 300px;
   display: grid;
   grid-template-areas: 
-  "number name"
-  "info pokemon";
+  "info-back evolution"
+  "info-back evolution";
   grid-template-columns: 1fr 1fr;
-  background-color: #b92929;
-  gap: 15px;
+  background-color: #D98F07;
   padding: 15px;
   color: white;
   transform: rotateY(180deg);
@@ -120,7 +119,7 @@
 .card-number{
   grid-area: number;
   display: flex;
-  /* align-items: center; */
+  align-items: baseline;
   font-weight: 600;
   color: #FFFFFF;
 }
@@ -128,7 +127,6 @@
 .card-name{
   grid-area: name;
   text-align: right;
-  margin: 5px 0;
   color: #FFFFFF;
   font-weight: 600;
   text-transform: capitalize;
@@ -145,13 +143,14 @@
   font-weight: 600;
   text-transform: uppercase;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .card-about{
   display: block;
   margin-top: 5px;
   color: #FFFFFF;
+  text-transform: capitalize;
 }
 
 .card-image{
@@ -165,6 +164,46 @@
 
 .card-image-pokemon{
   width: 100%;
+}
+
+.card-info-back{
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.card-evolution{
+  grid-area: evolution;
+  border-radius: 0px 0px 10px 10px;
+  width: 100%;
+  height: 50%;
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
+.title-evolution{
+  background-color: #11bb88;
+  color: #000;
+  font-weight: 700;
+  border-radius: 10px 10px 0px 0px;
+  border: 1px solid #000;
+}
+
+.sub-info{
+  font-size: 1.15rem;
+  background-color: #cfdcf0;
+  color: #000;
+  text-transform: capitalize;
+  padding: 3px;
+}
+
+.result-info{
+  background-color: #FFFFFF;
+  color: #000;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 2px;
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -185,6 +224,18 @@
   .flip-card{
     height: 25vh;
   }
+
+  .card-type{
+    font-size: 1.2rem;
+  }
+
+  .card-about{
+    margin-top: 11px;
+  }
+
+  .card-info-back{
+    font-size: 1.4rem;
+  }
 }
 
 /* Large devices (laptops/desktops, 1024px and up) */
@@ -196,38 +247,49 @@
   }
 
   .flip-card{
-    height: 55vh;
+    height: 70vh;
   }
 
   .card-front{
     grid-template-areas: 
     "number name"
     "pokemon pokemon"
-    "info info"
     "info info";
   }
 
   .card-back{
     grid-template-areas: 
-    "number name"
-    "pokemon pokemon"
-    "info info";
-  }
-
-  .card-name{
-    margin: 0px 0;
+    "info-back"
+    "info-back"
+    "evolution"
+    "nada"
+    "nada";
+    grid-template-columns: 1fr;
   }
 
   .card-info{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
     text-align: center;
   }
+
+  .card-about{
+    margin-top: 0px;
+  }
+
   .card-image-pokemon{
     width: 70%;
   }
 
+  .sub-info{
+    font-size: 1.6rem;
+  }
+
+  .result-info{
+    font-size: 1.6rem;
+  }
 
 }
 
@@ -247,6 +309,10 @@
 
   .cards{
     grid-template-columns: auto auto auto auto;
+  }
+
+   .flip-card{
+    height: 50vh;
   }
 }
 
