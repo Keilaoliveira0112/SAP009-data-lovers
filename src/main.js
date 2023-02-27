@@ -1,17 +1,35 @@
 //import { types } from '@babel/core';
-import { searchData, filterPokemon, calcularPorcetagem } from './data.js';
+import { searchData, filterPokemon, orderPokemon, calculatePercentage } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-//console.log(example, data);
-
-//Mostrar todos os cards
+/* Mostrar todos os cards */
 
 const resultPokemon = data.pokemon;
 
-const calculoText = document.getElementById('calcular')
+const calculationText = document.getElementById('calculation')
 
 function printCards(array) {
-  document.querySelector(".cards").innerHTML = array.map((key) =>`<div class="flip-card">
+  document.querySelector(".cards").innerHTML = array.map((key) => {
+    let evolutionTable = "";
+    if(key.evolution && key.evolution["next-evolution"]){
+      evolutionTable = `
+        <table border=1 class="card-evolution">
+          <tr>
+            <caption class="title-evolution">Evolução</caption>
+            <th class="sub-info">name</th>
+            <th class="sub-info">candy-cost</th>
+          </tr>
+          ${key.evolution["next-evolution"].map((evolution) =>`<tr>
+            <td class="result-info">${evolution.name}</td>
+            <td class="result-info">${evolution["candy-cost"]}</td>
+          </tr>
+          `
+  )}      
+        </table>
+      `
+    }
+
+    return `<div class="flip-card">
       <div class="the-card">
         <div class="card-pokemon card-front">
           <p class="card-number">Nº ${key.num}</p>
@@ -19,20 +37,22 @@ function printCards(array) {
           <div class="card-info">
             <p class="card-type"><strong>Tipo:</strong> ${key.type.join(" ")}</p>
             <p class="card-about"><strong>Geração:</strong> ${key.generation.name}</p>
-            <p class="card-about"><strong>Raridade:</strong> ${key["pokemon-rarity"]}</p>
-          </div>
-          <div class= "card-image">
-            <img class="card-image-pokemon" src="${key.img}" alt="${key.name}">
-          </div>
-        </div>
-        <div class="card-pokemon card-back">
-          <p class="cards-face">Peso: ${key.size.weight}</p>
-          <p class="cards-face">Altura: ${key.size.height}</p>
-          <li><strong>Fraquezas:</strong> <span class="cars-face">${key.weaknesses.join(",  ")}</li>
-          <p class="cards-face"><strong>Resistência:</strong> ${key.resistant.join(",  ")}</p>
-        </div>
-      </div>  
-    </div> `).join("")
+            <p class="card-about"><strong>Raridade:</strong> ${key["pokemon-rarity"]}</p >
+            <p class="card-about"><strong>Peso: </strong> ${key.size.weight}</p>
+            <p class="card-about"><strong>Altura: </strong> ${key.size.height}</p>
+          </div >
+  <div class="card-image">
+    <img class="card-image-pokemon" src="${key.img}" alt="${key.name}">
+  </div>
+        </div >
+  <div class="card-pokemon card-back">
+    <p class="card-info-back"><strong>Fraquezas: </strong> ${key.weaknesses.join(", ")}</p>
+    <p class="card-info-back"><strong>Resistência: </strong> ${key.resistant.join(", ")}</p>
+    ${evolutionTable}
+  </div>
+      </div >  
+    </div > `
+  }).join("")
 }
 printCards(resultPokemon)
 
@@ -47,7 +67,7 @@ btnMenu.addEventListener("click", () => {
   
 })
 
-/*Função pesquisa*/
+/*Barra de pesquisa*/
 const searchInput = document.getElementById('search')
 
 searchInput.addEventListener('keyup', (evento) => {
@@ -55,10 +75,10 @@ searchInput.addEventListener('keyup', (evento) => {
   const listFilter = searchData(valueInput, data.pokemon)
   printCards(listFilter)
 
-  calculoText.innerHTML = `Nesta página você encontrará ... tipos de pokemons.`
+  calculationText.innerHTML = `Nesta página você encontrará ... tipos de pokemons.`
 })
 
-/* Função filtro*/
+/* Filtro por tipo*/
 
 const filterTypes = document.getElementById('filter-types')
 
@@ -66,9 +86,14 @@ filterTypes.addEventListener('change', () => {
   const filter = filterPokemon(filterTypes.value, data.pokemon)
  
   printCards(filter)
-  const porcent = calcularPorcetagem(filter, data.pokemon)
-  calculoText.innerHTML = ` Você encontrarar ${porcent}% de pokemons equivalentes` 
+  const percentage = calculatePercentage(filter, data.pokemon)
+  calculationText.innerHTML = `Foram encontrados ${filter.length} Pokemons. Percentual de ${percentage}% do total.`  
 })
 
+/* Filtro ordenar*/
+const selectOrder = document.getElementById('select-order')
+selectOrder.addEventListener('change', () => {
+  const filterOrder = orderPokemon(selectOrder.value, data.pokemon)
+  printCards(filterOrder)
+})
 
-//Calculo agregado//

@@ -38,7 +38,7 @@
     </section>
     <section class="section-filter">
       <select id="filter-types" class="filter-select">
-        <option class="type">Todos os tipos</option>
+        <option value="" disabled selected>Todos os tipos</option>
         <option class="type">Bug</option>
         <option class="type">Dark</option>
         <option class="type">Dragon</option>
@@ -58,15 +58,16 @@
         <option class="type">Steel</option>
         <option class="type">Water</option>
       </select>
-      <select class="filter-select">
-        <option class="order">Crescente</option>
-        <option class="order">Decrescente</option>
-        <option class="order">A - Z</option>
-        <option class="order">Z - A</option>
+      <select id="select-order" class="filter-select">
+        <option value="" disabled selected>Ordenar</option>
+        <option value="Crescente" class="order">Crescente</option>
+        <option value="Decrescente" class="order">Decrescente</option>
+        <option value="a-z" class="order">A - Z</option>
+        <option value="z-a" class="order">Z - A</option>
       </select>
     </section>
     <section class="count">
-      <p id="calcular"></p> <!-- Será uma função js e retornar a conta nessa tag -->
+      <p id="calculation"></p>
     </section>
     <section class="cards"></section>
   </main>

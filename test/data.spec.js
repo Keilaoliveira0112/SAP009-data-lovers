@@ -1,5 +1,4 @@
-import { filterPokemon, searchData } from '../src/data.js';
-
+import { filterPokemon, searchData, orderPokemon } from '../src/data.js';
 
 const bulbasaur = {
   "num": "001",
@@ -35,16 +34,7 @@ const charmeleon = {
   ],
 }
 
-/* const vulpix = {
-  "num": "037",
-  "name": "vulpix",
-  "type": [
-    "fire"
-  ],
-} */
-
 const pokemonTest = [bulbasaur, ivysaur, charmander, charmeleon]
-
 
 // Teste do botão filtro por tipo de Pokemon//
 describe('Buscar personagens por tipo', () => {
@@ -60,7 +50,6 @@ describe('Buscar personagens por tipo', () => {
     expect(filterPokemon(value2, pokemonTest)).toEqual([charmander, charmeleon]);
   });
 });
-
 
 // Teste de função de pesquisa //
 
@@ -78,13 +67,21 @@ describe('Buscar por nome do personagem', () => {
   });
 });
 
+// Teste da função ordenar //
 
-/* describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+describe('Ordenar Lista de Pokemons', () =>{
+  test('is a function', () => {
+    expect(typeof orderPokemon).toBe('function')
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  it('Ordenar de a-z e z-a', () => {
+    const valueAZ = "a-z"
+    const valueZA = "z-a"
+
+    expect(orderPokemon(valueAZ, pokemonTest)).toEqual([bulbasaur, charmander, charmeleon, ivysaur]);
+    expect(orderPokemon(valueZA, pokemonTest)).toEqual([ivysaur, charmeleon, charmander, bulbasaur]);
+    
   });
-}); */
+  
+})
+
