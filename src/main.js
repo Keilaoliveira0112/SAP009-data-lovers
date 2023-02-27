@@ -11,26 +11,23 @@ function printCards(array) {
     let evolutionTable = "";
     if(key.evolution && key.evolution["next-evolution"]){
       evolutionTable = `
-          <table border=1>
-      <tr>
-        <caption>Evolução</caption>
-        <th>name</th>
-        <th>candy-cost</th>
-      </tr>
-      
-       ${key.evolution["next-evolution"].map((evolution) => 
-        `
-        <tr>
-        <td>${evolution.name}</td>
-        <td>${evolution["candy-cost"]}</td>
-        </tr>
-        `
-       )}
-        
-      
-    </table>
+        <table border=1>
+          <tr>
+            <caption>Evolução</caption>
+            <th>name</th>
+            <th>candy-cost</th>
+          </tr>
+          
+          ${key.evolution["next-evolution"].map((evolution) => 
+            `
+            <tr>
+              <td>${evolution.name}</td>
+              <td>${evolution["candy-cost"]}</td>
+            </tr>
+            `
+          )}      
+        </table>
       `
-
     }
 
       return `<div class="flip-card">
@@ -50,8 +47,8 @@ function printCards(array) {
   </div>
         </div >
   <div class="card-pokemon card-back">
-    <p><strong>Fraquezas:</strong> <span class="cars-face">${key.weaknesses.join(", ")}</p>
-    <p class="cards-face"><strong>Resistência:</strong> ${key.resistant.join(", ")}</p>
+    <p class="card-about"><strong>Fraquezas:</strong>${key.weaknesses.join(", ")}</p>
+    <p class="card-about"><strong>Resistência:</strong> ${key.resistant.join(", ")}</p>
     ${evolutionTable}
   </div>
       </div >  
