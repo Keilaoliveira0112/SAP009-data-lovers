@@ -31,8 +31,12 @@ function orderPokemon(value, array){
   return copy;  
 }
 
+/* Função Cálculo Agregado */
+const calculePokemon = (arrayFilter, arrayTotal) => (arrayFilter.length/arrayTotal.length * 100).toFixed(2);
+
 export {
   searchData, 
   filterPokemon,
-  orderPokemon
+  orderPokemon,
+  calculePokemon
 };
