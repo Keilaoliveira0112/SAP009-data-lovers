@@ -1,5 +1,4 @@
-import { filterPokemon, searchData, calcularPorcetagem } from '../src/data.js';
-
+import { filterPokemon, searchData, orderPokemon, calculatePercentage } from '../src/data.js';
 
 const bulbasaur = {
   "num": "001",
@@ -34,10 +33,7 @@ const charmeleon = {
     "fire"
   ],
 }
-
-
 const pokemonTest = [bulbasaur, ivysaur, charmander, charmeleon]
-
 
 // Teste do botão filtro por tipo de Pokemon//
 describe('Buscar personagens por tipo', () => {
@@ -53,7 +49,6 @@ describe('Buscar personagens por tipo', () => {
     expect(filterPokemon(value2, pokemonTest)).toEqual([charmander, charmeleon]);
   });
 });
-
 
 // Teste de função de pesquisa //
 
@@ -71,29 +66,33 @@ describe('Buscar por nome do personagem', () => {
   });
 });
 
+// Teste da função ordenar //
 
-
-// teste da função calculo agregado//
-
-describe('Porcentagem dos itens filtrados', () => {
+describe('Ordenar Lista de Pokemons', () => {
   test('is a function', () => {
-    expect(typeof calcularPorcetagem).toBe('function');
+    expect(typeof orderPokemon).toBe('function')
   });
 
-  it('retornar a porcentagem do array filtrado', () => {
+  it('Ordenar de a-z e z-a', () => {
+    const valueAZ = "a-z"
+    const valueZA = "z-a"
+
+    expect(orderPokemon(valueAZ, pokemonTest)).toEqual([bulbasaur, charmander, charmeleon, ivysaur]);
+    expect(orderPokemon(valueZA, pokemonTest)).toEqual([ivysaur, charmeleon, charmander, bulbasaur]);
+
+  });
+
+});
+
+//Teste do cálculo agregado
+describe('Percentual itens filtrados', () => {
+  test('is a function', () => {
+    expect(typeof calculatePercentage).toBe('function');
+  });
+ 
+  it('returnar a porcentagem do array filtrado', () => {
+    
     const filterPokemon = [charmeleon]
-
-    expect(calcularPorcetagem(filterPokemon, pokemonTest)).toEqual("25.00");
+    expect(calculatePercentage(filterPokemon, pokemonTest)).toBe("25.00");
   });
-})
-
-
-/* describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-}); */
+});
