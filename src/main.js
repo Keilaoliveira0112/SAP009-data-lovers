@@ -17,20 +17,17 @@ function printCards(array) {
             <th class="sub-info">name</th>
             <th class="sub-info">candy-cost</th>
           </tr>
-          
-          ${key.evolution["next-evolution"].map((evolution) => 
-            `
-            <tr>
-              <td class="result-info">${evolution.name}</td>
-              <td class="result-info">${evolution["candy-cost"]}</td>
-            </tr>
-            `
-          )}      
+          ${key.evolution["next-evolution"].map((evolution) =>`<tr>
+            <td class="result-info">${evolution.name}</td>
+            <td class="result-info">${evolution["candy-cost"]}</td>
+          </tr>
+          `
+  )}      
         </table>
       `
     }
 
-      return `<div class="flip-card">
+    return `<div class="flip-card">
       <div class="the-card">
         <div class="card-pokemon card-front">
           <p class="card-number">Nº ${key.num}</p>
@@ -53,7 +50,7 @@ function printCards(array) {
   </div>
       </div >  
     </div > `
-    }).join("")
+  }).join("")
 }
 printCards(resultPokemon)
 
