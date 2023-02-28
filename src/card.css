@@ -24,12 +24,6 @@
   padding: 15px;
 }
 
-#btn-search{
-  width: 7vw;
-  height: auto;
-  margin-left: 10px;
-}
-
 .section-filter{
   display: flex;
   justify-content: center;
@@ -212,10 +206,6 @@
     grid-template-columns: auto auto;
   }
 
-  #btn-search{
-    width: 5vw;
-  }
-
   .filter-select{
     font-size: 1.6rem;
   }
@@ -300,10 +290,6 @@
 
   #search{
     width: 30%;
-  }
-
-  #btn-search{
-    width: 3vw;
   }
 
   .cards{

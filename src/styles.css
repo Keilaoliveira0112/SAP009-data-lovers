@@ -10,6 +10,7 @@
 html {
   /* a cada 1rem será considera 10px */
   font-size: 62.5%;
+  font-family: Inter, sans-serif;
 }
 
 body {
@@ -145,7 +146,7 @@ body {
   }
 
   .options-menu {
-    font-weight: 800;
+    font-weight: 500;
     color: #000000;
     cursor: pointer;
     padding: 5px;

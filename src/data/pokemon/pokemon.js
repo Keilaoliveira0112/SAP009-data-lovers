@@ -4045,7 +4045,8 @@ export default {
       "candy": "zubat candy",
       "next-evolution": [{
         "num": "169",
-        "name": "crobat"
+        "name": "crobat",
+        "candy-cost": "100"
       }],
       "prev-evolution": [{
         "num": "041",
@@ -11147,7 +11148,8 @@ export default {
       "candy": "chansey candy",
       "next-evolution": [{
         "num": "242",
-        "name": "blissey"
+        "name": "blissey",
+        "candy-cost": "50"
       }],
       "prev-evolution": [{
         "num": "440",
