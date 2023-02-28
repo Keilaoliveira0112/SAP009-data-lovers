@@ -22,7 +22,7 @@ const charmander = {
   "num": "004",
   "name": "charmander",
   "type": [
-    "fire"
+    "fire",
   ],
 }
 
@@ -40,7 +40,6 @@ describe('Buscar personagens por tipo', () => {
   test('is a function', () => {
     expect(typeof filterPokemon).toBe('function');
   });
-
   it('retornar os personagens do tipo selecionado', () => {
     const value1 = "grass"
     const value2 = "fire"
@@ -84,14 +83,15 @@ describe('Ordenar Lista de Pokemons', () => {
 
 });
 
+
 //Teste do cálculo agregado
 describe('Percentual itens filtrados', () => {
   test('is a function', () => {
     expect(typeof calculatePercentage).toBe('function');
   });
- 
-  it('returnar a porcentagem do array filtrado', () => {
-    
+
+  it('retornar a porcentagem do array filtrado', () => {
+
     const filterPokemon = [charmeleon]
     expect(calculatePercentage(filterPokemon, pokemonTest)).toBe("25.00");
   });

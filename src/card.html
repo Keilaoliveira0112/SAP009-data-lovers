@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="O lugar certo para você encontra o próximo Pokémon que vai capturar!">
+    <meta name="description" content="O lugar certo para você encontrar o próximo Pokémon que vai capturar!">
     <title>CAPTURE POKÉMON</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="carrossel.css">
@@ -32,13 +32,14 @@
   <main>
     <section>
       <form class="form-busca">
-        <input type="search" name="search" id="search" value="" placeholder="Digite o nome do Pokémon">
+        <input type="search" name="search" id="search" value="" placeholder="Digite o nome do Pokémon" 
+            oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/(\..*?)\..*/g, '$1');" />
         <input type="image" id="btn-search" src="image/carrossel-search.png" alt="Lupa">
       </form>
     </section>
     <section class="section-filter">
       <select id="filter-types" class="filter-select">
-        <option value="" disabled selected>Todos os tipos</option>
+        <option value="">Todos os tipos</option>
         <option class="type">Bug</option>
         <option class="type">Dark</option>
         <option class="type">Dragon</option>

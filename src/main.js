@@ -75,7 +75,7 @@ searchInput.addEventListener('keyup', (evento) => {
   const listFilter = searchData(valueInput, data.pokemon)
   printCards(listFilter)
 
-  calculationText.innerHTML = `Nesta página você encontrará ... tipos de pokemons.`
+  calculationText.innerHTML = `<strong>Total de Pokemons encontrados:</strong> ${listFilter.length}.`
 })
 
 /* Filtro por tipo*/
