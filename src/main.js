@@ -1,4 +1,3 @@
-//import { types } from '@babel/core';
 import { searchData, filterPokemon, orderPokemon, calculatePercentage } from './data.js';
 import data from './data/pokemon/pokemon.js';
 

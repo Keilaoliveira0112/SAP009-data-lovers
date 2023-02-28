@@ -81,10 +81,17 @@ describe('Ordenar Lista de Pokemons', () => {
 
   });
 
+  it('Ordenar lista por número', () => {
+    const valueCrescente = "Crescente"
+    const valueDecrescente = "Decrescente"
+
+    expect(orderPokemon(valueCrescente, pokemonTest)).toEqual([bulbasaur, ivysaur, charmander, charmeleon]);
+    expect(orderPokemon(valueDecrescente, pokemonTest)).toEqual([charmeleon, charmander, ivysaur, bulbasaur]);
+  });
+
 });
 
-
-//Teste do cálculo agregado
+// Teste do cálculo agregado //
 describe('Percentual itens filtrados', () => {
   test('is a function', () => {
     expect(typeof calculatePercentage).toBe('function');
