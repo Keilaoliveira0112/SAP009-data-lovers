@@ -14,7 +14,7 @@ function printCards(array) {
       evolutionTable = `
         <table border=1 class="card-evolution">
           <tr>
-            <caption class="title-evolution">Evolução</caption>
+            <caption class="title-evolution">EVOLUÇÃO</caption>
             <th class="sub-info">name</th>
             <th class="sub-info">candy-cost</th>
           </tr>

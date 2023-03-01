@@ -83,6 +83,10 @@
     margin-left: 4%;
   }
 
+  .title-home {
+    font-weight: 800;
+  }
+
   .arrow {
     margin-left: 65%;
     width: 10vw;
