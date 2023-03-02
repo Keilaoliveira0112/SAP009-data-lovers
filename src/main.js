@@ -23,7 +23,7 @@ function printCards(array) {
             <td class="result-info">${evolution["candy-cost"]}</td>
           </tr>
           `
-  )}      
+  ).join("")}      
         </table>
       `
     }
@@ -82,7 +82,12 @@ searchInput.addEventListener('keyup', (evento) => {
 const filterTypes = document.getElementById('filter-types')
 
 filterTypes.addEventListener('change', () => {
-  const filter = filterPokemon(filterTypes.value, data.pokemon)
+  let filter = data.pokemon
+  if (filterTypes.value){
+    filter = filterPokemon(filterTypes.value, data.pokemon)
+  }
+  
+  console.log(filterTypes.value);
  
   printCards(filter)
   const percentage = calculatePercentage(filter, data.pokemon)

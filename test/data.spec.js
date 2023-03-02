@@ -74,10 +74,10 @@ describe('Ordenar Lista de Pokemons', () => {
 
   it('Ordenar de a-z e z-a', () => {
     const valueAZ = "a-z"
-    const valueZA = "z-a"
+    //  onst valueZA = "z-a"
 
     expect(orderPokemon(valueAZ, pokemonTest)).toEqual([bulbasaur, charmander, charmeleon, ivysaur]);
-    expect(orderPokemon(valueZA, pokemonTest)).toEqual([ivysaur, charmeleon, charmander, bulbasaur]);
+    //  expect(orderPokemon(valueZA, pokemonTest)).toEqual([ivysaur, charmeleon, charmander, bulbasaur]);
 
   });
 

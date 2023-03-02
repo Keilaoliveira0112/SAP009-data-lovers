@@ -11,6 +11,7 @@ function filterPokemon(value, array) {
 /* Filtro da Ordem */
 function orderPokemon(value, array){
   const copy = [...array];
+  console.log(value);
   if(value === "Crescente"){
     copy.sort((a,b) => a.num - b.num);
   }else if(value === "Decrescente"){
