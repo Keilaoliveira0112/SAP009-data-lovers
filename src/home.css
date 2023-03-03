@@ -1,7 +1,4 @@
-/*css pokeball*/
-
 .initial-home{
-  font-family: 'Inter', sans-serif;
   height: auto;
   width: 100%;
   background-color: #d68d04;
@@ -97,12 +94,10 @@
   .pokeball {
     width: 40vw;
   }  
-
 }
 
 @media only screen and (min-width: 1200px) {
   .position-section-home {
     margin-top: 6%;
   }
-
 }

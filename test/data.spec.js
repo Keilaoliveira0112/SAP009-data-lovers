@@ -35,7 +35,6 @@ const charmeleon = {
 }
 const pokemonTest = [bulbasaur, ivysaur, charmander, charmeleon]
 
-// Teste do botão filtro por tipo de Pokemon//
 describe('Buscar personagens por tipo', () => {
   test('is a function', () => {
     expect(typeof filterPokemon).toBe('function');
@@ -48,8 +47,6 @@ describe('Buscar personagens por tipo', () => {
     expect(filterPokemon(value2, pokemonTest)).toEqual([charmander, charmeleon]);
   });
 });
-
-// Teste de função de pesquisa //
 
 describe('Buscar por nome do personagem', () => {
   test('is a functon', () => {
@@ -65,8 +62,6 @@ describe('Buscar por nome do personagem', () => {
   });
 });
 
-// Teste da função ordenar //
-
 describe('Ordenar Lista de Pokemons', () => {
   test('is a function', () => {
     expect(typeof orderPokemon).toBe('function')
@@ -74,10 +69,10 @@ describe('Ordenar Lista de Pokemons', () => {
 
   it('Ordenar de a-z e z-a', () => {
     const valueAZ = "a-z"
-    //  onst valueZA = "z-a"
+    const valueZA = "z-a"
 
     expect(orderPokemon(valueAZ, pokemonTest)).toEqual([bulbasaur, charmander, charmeleon, ivysaur]);
-    //  expect(orderPokemon(valueZA, pokemonTest)).toEqual([ivysaur, charmeleon, charmander, bulbasaur]);
+    expect(orderPokemon(valueZA, pokemonTest)).toEqual([ivysaur, charmeleon, charmander, bulbasaur]);
 
   });
 
@@ -91,7 +86,6 @@ describe('Ordenar Lista de Pokemons', () => {
 
 });
 
-// Teste do cálculo agregado //
 describe('Percentual itens filtrados', () => {
   test('is a function', () => {
     expect(typeof calculatePercentage).toBe('function');
