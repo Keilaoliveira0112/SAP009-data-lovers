@@ -1,0 +1,103 @@
+.initial-home{
+  height: auto;
+  width: 100%;
+  background-color: #d68d04;
+  background-image: url("image/home-mobile-background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.position-section-home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+  margin-top: 20%;
+}
+
+.title-home {
+  font-family: 'black hans sans', sans-serif;
+  font-size: calc(3vw + 3vh + 1vmin);
+  font-weight: 700;
+}
+
+.arrow {
+  display: none;
+}
+
+.position-pokeball{
+  flex:2;
+}
+
+.pokeball {
+  width: 75vw;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
+
+  .position-section-home{
+    gap: 10px;
+    margin-top: 12%;
+  }
+
+  .pokeball {
+    width: 55vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+  .position-section-home{
+    gap: 130px;
+    margin-top: 12%;
+  }
+
+  .pokeball {
+    width: 50vw;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+
+  .initial-home {
+    background-image: url("image/home-background.svg");
+  }
+
+  .position-section-home {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 15px;
+    margin-top: 10%;
+  }
+
+  .position-home{
+    margin-left: 4%;
+  }
+
+  .title-home {
+    font-weight: 800;
+  }
+
+  .arrow {
+    margin-left: 65%;
+    width: 10vw;
+    max-width: 980px;
+    display: block;
+  }
+
+  .pokeball {
+    width: 40vw;
+  }  
+}
+
+@media only screen and (min-width: 1200px) {
+  .position-section-home {
+    margin-top: 6%;
+  }
+}
