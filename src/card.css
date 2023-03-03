@@ -1,15 +1,13 @@
-/* CSS da página carrossel */
-
 .background-carrossel{
   background-color: #EEEEEE;
 }
 
 .form-busca {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 20px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px; 
 }
 
 #search{
@@ -22,12 +20,6 @@
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
   text-align: left;
   padding: 15px;
-}
-
-#btn-search{
-  width: 7vw;
-  height: auto;
-  margin-left: 10px;
 }
 
 .section-filter{
@@ -53,13 +45,12 @@
 }
 
 .cards{
-  width: 90%;
+  width: 100%;
   margin: 5% auto;
   display: grid;
   grid-template-columns: auto;
   gap: 10px;
   padding: 15px;
-  font-family: sans-serif;
 }
 
 .flip-card{
@@ -74,7 +65,6 @@
   height: 100%;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
 }
 
 .flip-card:hover .the-card{
@@ -86,42 +76,40 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 1rem;
 }
 
  .card-front {
-  min-width: 300px;
-  display: grid;
-  grid-template-areas: 
-  "number name"
-  "info pokemon";
-  grid-template-columns: 1fr 1fr;
-  background-color: #2885AE;
-  gap: 15px;
-  padding: 15px;
-  border-radius: 10px;
+   min-width: 300px;
+   display: grid;
+   grid-template-areas: 
+   "number name"
+   "info pokemon";
+   grid-template-columns: 1fr 1fr;
+   background-color: #2885AE;
+   gap: 15px;
+   padding: 15px;
+   border-radius: 10px;
  }
 
  .card-back {
-  min-width: 300px;
-  display: grid;
-  grid-template-areas: 
-  "number name"
-  "info pokemon";
-  grid-template-columns: 1fr 1fr;
-  background-color: #b92929;
-  gap: 15px;
-  padding: 15px;
-  color: white;
-  transform: rotateY(180deg);
+   min-width: 300px;
+   display: grid;
+   grid-template-areas: 
+   "info-back evolution"
+   "info-back evolution";
+   grid-template-columns: 1fr 1fr;
+   background-color: #D98F07;
+   padding: 15px;
+   color: #FFFFFF;
+   transform: rotateY(180deg);
 }
 
 .card-number{
   grid-area: number;
   display: flex;
-  /* align-items: center; */
+  align-items: baseline;
   font-weight: 600;
   color: #FFFFFF;
 }
@@ -129,7 +117,6 @@
 .card-name{
   grid-area: name;
   text-align: right;
-  margin: 5px 0;
   color: #FFFFFF;
   font-weight: 600;
   text-transform: capitalize;
@@ -144,40 +131,73 @@
   border-radius: 20px;
   padding: 2px 10px;
   font-weight: 600;
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .card-about{
   display: block;
-  margin-top: 15px;
+  margin-top: 5px;
   color: #FFFFFF;
-  font-size: 1.4rem;
+  text-transform: capitalize;
 }
 
 .card-image{
   grid-area: pokemon;
   background-color: #F7F7F7;
   border-radius: 10px;
-  padding: 10px;
   display: grid;
-  align-items: center;
+  place-items: center;
 }
 
 .card-image-pokemon{
-  width: 100%;
+  width: 65%;
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
+.card-info-back{
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.card-evolution{
+  grid-area: evolution;
+  border-radius: 0px 0px 10px 10px;
+  width: 100%;
+  height: 50%;
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
+.title-evolution{
+  background-color: #11bb88;
+  color: #000;
+  font-weight: 700;
+  border-radius: 10px 10px 0px 0px;
+  border: 1px solid #000;
+}
+
+.sub-info{
+  font-size: 1.15rem;
+  background-color: #cfdcf0;
+  color: #000;
+  text-transform: capitalize;
+  padding: 3px;
+}
+
+.result-info{
+  background-color: #FFFFFF;
+  color: #000;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 2px;
+}
 
 @media screen and (min-width: 768px) {
   .cards{
     grid-template-columns: auto auto;
-  }
-
-  #btn-search{
-    width: 5vw;
   }
 
   .filter-select{
@@ -187,9 +207,19 @@
   .flip-card{
     height: 25vh;
   }
-}
 
-/* Large devices (laptops/desktops, 1024px and up) */
+  .card-type{
+    font-size: 1.2rem;
+  }
+
+  .card-about{
+    margin-top: 11px;
+  }
+
+  .card-info-back{
+    font-size: 1.4rem;
+  }
+}
 
 @media only screen and (min-width: 1024px) {
   .cards{
@@ -210,19 +240,38 @@
 
   .card-back{
     grid-template-areas: 
-    "number name"
-    "pokemon pokemon"
-    "info info";
+    "info-back"
+    "info-back"
+    "evolution"
+    "none"
+    "none";
+    grid-template-columns: 1fr;
   }
 
   .card-info{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
     text-align: center;
   }
-}
 
+  .card-about{
+    margin-top: 0px;
+  }
+
+  .card-image-pokemon{
+    width: 70%;
+  }
+
+  .sub-info{
+    font-size: 1.6rem;
+  }
+
+  .result-info{
+    font-size: 1.6rem;
+  }
+}
 
 @media only screen and (min-width: 1366px) {
   .filter-select{
@@ -233,12 +282,12 @@
     width: 30%;
   }
 
-  #btn-search{
-    width: 3vw;
-  }
-
   .cards{
     grid-template-columns: auto auto auto auto;
+  }
+
+  .flip-card{
+    height: 65vh;
   }
 }
 

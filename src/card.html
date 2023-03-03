@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O lugar certo para você encontrar o próximo Pokémon que vai capturar!">
+    <title>CAPTURE POKÉMON</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="card.css">
+</head>
+
+<body class="background-carrossel">
+  <header class="position-header">
+    <img src="image/pokeball.png" alt="Pokebola" class="logo">
+    <div class="menu-section">
+      <button class="menu-toggle">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </button> 
+      <nav class="position-nav">
+        <div class="menu">
+          <ul class="ul-nav">
+            <li class="li-nav"><a href="index.html" class="options-menu">HOME</a></li>
+            <li class="li-nav"><a class="options-menu" href="https://pokemongolive.com/" target="_blank" rel="noopener noreferrer">POKEMON GO</a></li>
+          </ul>
+        </div> 
+      </nav>
+    </div> 
+  </header>
+  <main>
+    <section>
+      <form class="form-busca">
+        <input type="search" name="search" id="search" value="" placeholder="Digite o nome do Pokémon" 
+            oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+      </form>
+    </section>
+    <section class="section-filter">
+      <select id="filter-types" class="filter-select">
+        <option value="">Todos os tipos</option>
+        <option>Bug</option>
+        <option>Dark</option>
+        <option>Dragon</option>
+        <option>Electric</option>
+        <option>Fairy</option>
+        <option>Fighting</option>
+        <option>Fire</option>
+        <option>Flying</option>
+        <option>Ghost</option>
+        <option>Grass</option>
+        <option>Ground</option>
+        <option>Ice</option>
+        <option>Normal</option>
+        <option>Poison</option>
+        <option>Psychic</option>
+        <option>Rock</option>
+        <option>Steel</option>
+        <option>Water</option>
+      </select>
+      <select id="select-order" class="filter-select">
+        <option value="" disabled selected>Ordenar</option>
+        <option value="Crescente">Crescente</option>
+        <option value="Decrescente">Decrescente</option>
+        <option value="a-z">A - Z</option>
+        <option value="z-a">Z - A</option>
+      </select>
+    </section>
+    <section class="count">
+      <p id="calculation"></p>
+    </section>
+    <section class="cards"></section>
+  </main>
+
+  <footer></footer>
+
+  <script src="main.js" type="module"></script>
+</body>
+
+</html>
