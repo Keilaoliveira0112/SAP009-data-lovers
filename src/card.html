@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="O lugar certo para você encontra o próximo Pokémon que vai capturar!">
+    <meta name="description" content="O lugar certo para você encontrar o próximo Pokémon que vai capturar!">
     <title>CAPTURE POKÉMON</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="carrossel.css">
+    <link rel="stylesheet" href="card.css">
 </head>
 
 <body class="background-carrossel">
@@ -32,38 +32,38 @@
   <main>
     <section>
       <form class="form-busca">
-        <input type="search" name="search" id="search" value="" placeholder="Digite o nome do Pokémon">
-        <input type="image" id="btn-search" src="image/carrossel-search.png" alt="Lupa">
+        <input type="search" name="search" id="search" value="" placeholder="Digite o nome do Pokémon" 
+            oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/(\..*?)\..*/g, '$1');" />
       </form>
     </section>
     <section class="section-filter">
       <select id="filter-types" class="filter-select">
-        <option value="" disabled selected>Todos os tipos</option>
-        <option class="type">Bug</option>
-        <option class="type">Dark</option>
-        <option class="type">Dragon</option>
-        <option class="type">Electric</option>
-        <option class="type">Fairy</option>
-        <option class="type">Fighting</option>
-        <option class="type">Fire</option>
-        <option class="type">Flying</option>
-        <option class="type">Ghost</option>
-        <option class="type">Grass</option>
-        <option class="type">Ground</option>
-        <option class="type">Ice</option>
-        <option class="type">Normal</option>
-        <option class="type">Poison</option>
-        <option class="type">Psychic</option>
-        <option class="type">Rock</option>
-        <option class="type">Steel</option>
-        <option class="type">Water</option>
+        <option value="">Todos os tipos</option>
+        <option>Bug</option>
+        <option>Dark</option>
+        <option>Dragon</option>
+        <option>Electric</option>
+        <option>Fairy</option>
+        <option>Fighting</option>
+        <option>Fire</option>
+        <option>Flying</option>
+        <option>Ghost</option>
+        <option>Grass</option>
+        <option>Ground</option>
+        <option>Ice</option>
+        <option>Normal</option>
+        <option>Poison</option>
+        <option>Psychic</option>
+        <option>Rock</option>
+        <option>Steel</option>
+        <option>Water</option>
       </select>
       <select id="select-order" class="filter-select">
         <option value="" disabled selected>Ordenar</option>
-        <option value="Crescente" class="order">Crescente</option>
-        <option value="Decrescente" class="order">Decrescente</option>
-        <option value="a-z" class="order">A - Z</option>
-        <option value="z-a" class="order">Z - A</option>
+        <option value="Crescente">Crescente</option>
+        <option value="Decrescente">Decrescente</option>
+        <option value="a-z">A - Z</option>
+        <option value="z-a">Z - A</option>
       </select>
     </section>
     <section class="count">

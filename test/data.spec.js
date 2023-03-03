@@ -1,4 +1,4 @@
-import { filterPokemon, searchData, orderPokemon } from '../src/data.js';
+import { filterPokemon, searchData, orderPokemon, calculatePercentage } from '../src/data.js';
 
 const bulbasaur = {
   "num": "001",
@@ -22,7 +22,7 @@ const charmander = {
   "num": "004",
   "name": "charmander",
   "type": [
-    "fire"
+    "fire",
   ],
 }
 
@@ -33,25 +33,20 @@ const charmeleon = {
     "fire"
   ],
 }
-
 const pokemonTest = [bulbasaur, ivysaur, charmander, charmeleon]
 
-// Teste do botão filtro por tipo de Pokemon//
 describe('Buscar personagens por tipo', () => {
   test('is a function', () => {
     expect(typeof filterPokemon).toBe('function');
   });
-
   it('retornar os personagens do tipo selecionado', () => {
     const value1 = "grass"
     const value2 = "fire"
 
-    expect(filterPokemon(value1, pokemonTest)).toStrictEqual([bulbasaur, ivysaur]);
+    expect(filterPokemon(value1, pokemonTest)).toEqual([bulbasaur, ivysaur]);
     expect(filterPokemon(value2, pokemonTest)).toEqual([charmander, charmeleon]);
   });
 });
-
-// Teste de função de pesquisa //
 
 describe('Buscar por nome do personagem', () => {
   test('is a functon', () => {
@@ -67,9 +62,7 @@ describe('Buscar por nome do personagem', () => {
   });
 });
 
-// Teste da função ordenar //
-
-describe('Ordenar Lista de Pokemons', () =>{
+describe('Ordenar Lista de Pokemons', () => {
   test('is a function', () => {
     expect(typeof orderPokemon).toBe('function')
   });
@@ -80,8 +73,27 @@ describe('Ordenar Lista de Pokemons', () =>{
 
     expect(orderPokemon(valueAZ, pokemonTest)).toEqual([bulbasaur, charmander, charmeleon, ivysaur]);
     expect(orderPokemon(valueZA, pokemonTest)).toEqual([ivysaur, charmeleon, charmander, bulbasaur]);
-    
-  });
-  
-})
 
+  });
+
+  it('Ordenar lista por número', () => {
+    const valueCrescente = "Crescente"
+    const valueDecrescente = "Decrescente"
+
+    expect(orderPokemon(valueCrescente, pokemonTest)).toEqual([bulbasaur, ivysaur, charmander, charmeleon]);
+    expect(orderPokemon(valueDecrescente, pokemonTest)).toEqual([charmeleon, charmander, ivysaur, bulbasaur]);
+  });
+
+});
+
+describe('Percentual itens filtrados', () => {
+  test('is a function', () => {
+    expect(typeof calculatePercentage).toBe('function');
+  });
+
+  it('retornar a porcentagem do array filtrado', () => {
+
+    const filterPokemon = [charmeleon]
+    expect(calculatePercentage(filterPokemon, pokemonTest)).toBe("25.00");
+  });
+});

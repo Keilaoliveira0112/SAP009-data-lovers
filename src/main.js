@@ -1,8 +1,5 @@
-//import { types } from '@babel/core';
 import { searchData, filterPokemon, orderPokemon, calculatePercentage } from './data.js';
 import data from './data/pokemon/pokemon.js';
-
-/* Mostrar todos os cards */
 
 const resultPokemon = data.pokemon;
 
@@ -11,20 +8,20 @@ const calculationText = document.getElementById('calculation')
 function printCards(array) {
   document.querySelector(".cards").innerHTML = array.map((key) => {
     let evolutionTable = "";
-    if(key.evolution && key.evolution["next-evolution"]){
+    if (key.evolution && key.evolution["next-evolution"]) {
       evolutionTable = `
         <table border=1 class="card-evolution">
           <tr>
-            <caption class="title-evolution">Evolução</caption>
+            <caption class="title-evolution">EVOLUÇÃO</caption>
             <th class="sub-info">name</th>
             <th class="sub-info">candy-cost</th>
           </tr>
-          ${key.evolution["next-evolution"].map((evolution) =>`<tr>
+          ${key.evolution["next-evolution"].map((evolution) => `<tr>
             <td class="result-info">${evolution.name}</td>
             <td class="result-info">${evolution["candy-cost"]}</td>
           </tr>
           `
-  )}      
+  ).join("")}      
         </table>
       `
     }
@@ -56,18 +53,14 @@ function printCards(array) {
 }
 printCards(resultPokemon)
 
-
-/* Menu Responsivo */
-
 const btnMenu = document.querySelector(".menu-toggle")
 const menu = document.querySelector(".menu-section")
 
 btnMenu.addEventListener("click", () => {
   menu.classList.toggle("show")
-  
+
 })
 
-/*Barra de pesquisa*/
 const searchInput = document.getElementById('search')
 
 searchInput.addEventListener('keyup', (evento) => {
@@ -75,22 +68,22 @@ searchInput.addEventListener('keyup', (evento) => {
   const listFilter = searchData(valueInput, data.pokemon)
   printCards(listFilter)
 
-  calculationText.innerHTML = `Nesta página você encontrará ... tipos de pokemons.`
+  calculationText.innerHTML = `<strong>Total de Pokemons encontrados:</strong> ${listFilter.length}.`
 })
-
-/* Filtro por tipo*/
 
 const filterTypes = document.getElementById('filter-types')
 
 filterTypes.addEventListener('change', () => {
-  const filter = filterPokemon(filterTypes.value, data.pokemon)
- 
+  let filter = data.pokemon
+  if (filterTypes.value) {
+    filter = filterPokemon(filterTypes.value, data.pokemon)
+  }
+
   printCards(filter)
   const percentage = calculatePercentage(filter, data.pokemon)
-  calculationText.innerHTML = `Foram encontrados ${filter.length} Pokemons. Percentual de ${percentage}% do total.`  
+  calculationText.innerHTML = `Foram encontrados ${filter.length} Pokemons. Percentual de ${percentage}% do total.`
 })
 
-/* Filtro ordenar*/
 const selectOrder = document.getElementById('select-order')
 selectOrder.addEventListener('change', () => {
   const filterOrder = orderPokemon(selectOrder.value, data.pokemon)
