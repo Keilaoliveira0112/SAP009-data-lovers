@@ -1,6 +1,10 @@
 import { searchData, filterPokemon, orderPokemon, calculatePercentage } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
+document.addEventListener("DOMContentLoaded", () =>{
+  alert("Sejam Bem-vindas e Bem-vindos\n\nNesse site você irá encontrar informações relevantes sobre os pokémons da região Kanto e Johto!");
+})
+
 const resultPokemon = data.pokemon;
 
 const calculationText = document.getElementById('calculation')
@@ -21,7 +25,7 @@ function printCards(array) {
             <td class="result-info">${evolution["candy-cost"]}</td>
           </tr>
           `
-  ).join("")}      
+          ).join("")}      
         </table>
       `
     }
@@ -38,15 +42,15 @@ function printCards(array) {
             <p class="card-about"><strong>Peso: </strong> ${key.size.weight}</p>
             <p class="card-about"><strong>Altura: </strong> ${key.size.height}</p>
           </div >
-  <div class="card-image">
-    <img class="card-image-pokemon" src="${key.img}" alt="${key.name}">
-  </div>
+          <div class="card-image">
+            <img class="card-image-pokemon" src="${key.img}" alt="${key.name}">
+          </div>
         </div >
-  <div class="card-pokemon card-back">
-    <p class="card-info-back"><strong>Fraquezas: </strong> ${key.weaknesses.join(", ")}</p>
-    <p class="card-info-back"><strong>Resistência: </strong> ${key.resistant.join(", ")}</p>
-    ${evolutionTable}
-  </div>
+        <div class="card-pokemon card-back">
+          <p class="card-info-back"><strong>Fraquezas: </strong> ${key.weaknesses.join(", ")}</p>
+          <p class="card-info-back"><strong>Resistência: </strong> ${key.resistant.join(", ")}</p>
+          ${evolutionTable}
+        </div>
       </div >  
     </div > `
   }).join("")
@@ -58,7 +62,6 @@ const menu = document.querySelector(".menu-section")
 
 btnMenu.addEventListener("click", () => {
   menu.classList.toggle("show")
-
 })
 
 const searchInput = document.getElementById('search')
