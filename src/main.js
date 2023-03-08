@@ -5,6 +5,13 @@ document.addEventListener("DOMContentLoaded", () =>{
   alert("Sejam Bem-vindas e Bem-vindos\n\nNesse site você irá encontrar informações relevantes sobre os pokémons da região Kanto e Johto!");
 })
 
+const btnMenu = document.querySelector(".menu-toggle")
+const menu = document.querySelector(".menu-section")
+
+btnMenu.addEventListener("click", () => {
+  menu.classList.toggle("show")
+})
+
 const resultPokemon = data.pokemon;
 
 const calculationText = document.getElementById('calculation')
@@ -25,7 +32,7 @@ function printCards(array) {
             <td class="result-info">${evolution["candy-cost"]}</td>
           </tr>
           `
-          ).join("")}      
+  ).join("")}      
         </table>
       `
     }
@@ -56,13 +63,6 @@ function printCards(array) {
   }).join("")
 }
 printCards(resultPokemon)
-
-const btnMenu = document.querySelector(".menu-toggle")
-const menu = document.querySelector(".menu-section")
-
-btnMenu.addEventListener("click", () => {
-  menu.classList.toggle("show")
-})
 
 const searchInput = document.getElementById('search')
 

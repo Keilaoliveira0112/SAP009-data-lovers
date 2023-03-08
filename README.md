@@ -119,9 +119,13 @@ Para a excução correta do projeto, planejamos um protótipo capaz de suprir as
 
 1. Eu como jogador novato de Pokemon Go, quero ter acesso a uma lista de pokemons para conhecê-los;
 
-2. Eu como jogador quero saber características únicas de cada pokémon para me ajudar nas decisões durante o jogo;
+2. Eu como jogador de Pokemon Go, quero ter opção de filtrar por tipo para saber quais e quantos pokémons pertencem ao tipo especificado;
 
-3. Eu como mestre pokemon quero saber quantos candies serão necessários para um pokemon evoluir.
+3. Eu como jogador quero ordenar os pokemons alfabeticamente e numericamente para poder encontra-los com mais facilidade;
+
+4. Eu como mestre pokemon quero saber quantos candies serão necessários para um pokemon evoluir;
+
+5. Eu como jogador de Pokemon Go quero uma barra de pesquisa para buscar rapidamente um pokemon específico.
 
 Ao acessar o site, o usuário clica na pokebola e será direcionado para uma página com todos os cards de Pokemons.
 Cada card possui na parte frontal informações como: peso, altura, raridade, e geração. Ao passar o mouse pelo card, o mesmo vira e irá trazer informações de: fraqueza, resistência, evoluções e quantos candies são necessários para sua evolução.
@@ -170,6 +174,10 @@ Fizemos testes de usabilidades e constatamos que:
 4º - Na utilização do filtro de tipos, o usuário ao selecionar a opção "todos os tipos" o campo aparecia vazio, sem nenhuma informação, colocamos uma condicional no código para quando o usuário escolher um tipo específico;
 
 5º Em alguns cards (Eevee e Tyrogue), foi observado que constavam alguns caracteres especiais ", , ," embaixo da tabela de evolução, corrigimos no código colocando o join("") depois da tabela.
+
+6º Nos cards o tamanho da letra do nome do pokemon estava pouco destacado. Resolvemos aumentar o tamanho da fonte.
+
+7º O nosso usuário sentiu falta de alguma descrição do que pode ser encontrado no site. Resolvemos isso colocando um alert assim que o usuário acessa a página dos cards.
 
 
 ## 7. Testes unitários
