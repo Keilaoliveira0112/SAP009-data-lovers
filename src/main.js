@@ -38,15 +38,15 @@ function printCards(array) {
             <p class="card-about"><strong>Peso: </strong> ${key.size.weight}</p>
             <p class="card-about"><strong>Altura: </strong> ${key.size.height}</p>
           </div >
-  <div class="card-image">
-    <img class="card-image-pokemon" src="${key.img}" alt="${key.name}">
-  </div>
+          <div class="card-image">
+            <img class="card-image-pokemon" src="${key.img}" alt="${key.name}">
+          </div>
         </div >
-  <div class="card-pokemon card-back">
-    <p class="card-info-back"><strong>Fraquezas: </strong> ${key.weaknesses.join(", ")}</p>
-    <p class="card-info-back"><strong>Resistência: </strong> ${key.resistant.join(", ")}</p>
-    ${evolutionTable}
-  </div>
+        <div class="card-pokemon card-back">
+          <p class="card-info-back"><strong>Fraquezas: </strong> ${key.weaknesses.join(", ")}</p>
+          <p class="card-info-back"><strong>Resistência: </strong> ${key.resistant.join(", ")}</p>
+          ${evolutionTable}
+        </div>
       </div >  
     </div > `
   }).join("")
